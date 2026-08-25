@@ -44,6 +44,7 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   min-height: 100vh;
   margin: 0 auto;
   padding: 80px 24px 160px;
+  overflow: hidden;
 }
 .page-col {
   display: flex;
@@ -68,6 +69,22 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 h1 {
   margin: 4px 0 0;
   font: 700 24px/32px var(--display);
+}
+/* Cursor glow */
+.cursor-glow {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 70%);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 0;
+}
+.hero-section-wrap:hover .cursor-glow {
+  opacity: 1;
 }
 .name-display {
   position: relative;
@@ -113,6 +130,7 @@ h1 {
 
 /* ── Button (shared) ── */
 .button {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -125,6 +143,7 @@ h1 {
   font-size: 12px;
   line-height: 16px;
   font-weight: 500;
+  overflow: hidden;
   box-shadow:
     0 32px 64px -16px #0000004c,
     0 16px 32px -8px #0000004c,
@@ -133,7 +152,19 @@ h1 {
     0 0 0 1px #000,
     inset 0 0 0 1px #ffffff14,
     inset 0 1px 0 #ffffff33;
-  transition: background 0.2s, color 0.2s, transform 0.25s cubic-bezier(0.2,0.8,0.2,1), box-shadow 0.25s;
+  transition: background 0.2s, color 0.2s, transform 0.25s cubic-bezier(0.2,0.8,0.2,1), box-shadow 0.3s;
+}
+/* Shimmer sweep */
+.button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 30%, rgba(255,255,255,0.12) 50%, transparent 70%);
+  transform: translateX(-150%);
+  transition: transform 0.6s cubic-bezier(0.2,0.8,0.2,1);
+}
+.button:hover::after {
+  transform: translateX(150%);
 }
 .button svg {
   width: 13px;
@@ -144,19 +175,32 @@ h1 {
   background: var(--card-fg);
   color: var(--brand);
   transform: translateY(-1px);
+  box-shadow:
+    0 32px 64px -16px #0000004c,
+    0 16px 32px -8px #0000004c,
+    0 8px 16px -4px #0000003d,
+    0 4px 8px -2px #0000003d,
+    0 0 0 1px #333,
+    inset 0 0 0 1px #ffffff20,
+    inset 0 1px 0 #ffffff40,
+    0 0 20px rgba(255,255,255,0.05);
 }
 .button:active {
   transform: translateY(1px) scale(0.98);
 }
 
 /* ── System Map ── */
+.hero-section-wrap {
+  position: relative;
+}
 .system-map {
   position: absolute;
-  right: 2px;
+  right: 0;
   top: 92px;
-  width: 300px;
+  width: 280px;
   height: 145px;
   cursor: pointer;
+  max-width: 40%;
 }
 .system-map::before, .system-map::after {
   content: "";
@@ -200,28 +244,15 @@ h1 {
 
 /* ── Contribution Calendar ── */
 .contribution-section {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
+  display: block;
   color: var(--muted);
 }
 .month-labels {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
+  height: 14px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
   font: 300 8px/12px var(--mono);
   color: #777;
-  padding-right: 6px;
-  writing-mode: horizontal-tb;
-}
-.month-labels span {
-  height: 12px;
-  display: flex;
-  align-items: center;
-}
-.calendar-row {
-  display: flex;
-  gap: 0;
 }
 .calendar-clip {
   width: 100%;
@@ -234,6 +265,28 @@ h1 {
   grid-auto-columns: 9px;
   gap: 3px;
   width: max-content;
+}
+.contribution-section > p {
+  margin: 8px 0 0;
+  font: 300 9px/13px var(--mono);
+  color: #777;
+}
+.contribution-section > p strong {
+  font-weight: 300;
+}
+/* Animated number ticker */
+.contribution-total {
+  display: inline-block;
+}
+.contribution-total .digit-wrapper {
+  display: inline-block;
+  overflow: hidden;
+  height: 1em;
+  vertical-align: bottom;
+}
+.contribution-total .digit {
+  display: inline-block;
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 .day {
   width: 9px; height: 9px;
@@ -392,7 +445,7 @@ h1 {
 .project-wide {
   grid-column: 1 / -1;
 }
-.project-border {
+.project-card-inner {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -400,42 +453,36 @@ h1 {
   padding: 8px;
   transition: border-color 0.2s, transform 0.25s cubic-bezier(0.2,0.8,0.2,1), box-shadow 0.25s;
 }
-.project-border::before {
-  content: "";
+/* Hover overlay — fades in */
+.project-overlay {
+  pointer-events: none;
   position: absolute;
   inset: -1px;
-  border: 1px dashed #ffffff26;
-  background: rgba(140,140,140,0.08);
+  z-index: 10;
+  border: 1px dashed rgba(255,255,255,0.15);
+  background: rgba(140,140,140,0.15);
   opacity: 0;
-  pointer-events: none;
   transition: opacity 0.2s;
 }
-/* Corner accents */
-.project-border::after {
-  content: "";
+.corner-tl, .corner-tr, .corner-br, .corner-bl {
   position: absolute;
-  inset: -1px;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.2s;
-  background:
-    linear-gradient(to right, #fff 8px, transparent 8px) no-repeat 0 0 / 8px 1px,
-    linear-gradient(to bottom, #fff 8px, transparent 8px) no-repeat 0 0 / 1px 8px,
-    linear-gradient(to left, #fff 8px, transparent 8px) no-repeat 100% 0 / 8px 1px,
-    linear-gradient(to bottom, #fff 8px, transparent 8px) no-repeat 100% 0 / 1px 8px,
-    linear-gradient(to right, #fff 8px, transparent 8px) no-repeat 0 100% / 8px 1px,
-    linear-gradient(to top, #fff 8px, transparent 8px) no-repeat 0 100% / 1px 8px,
-    linear-gradient(to left, #fff 8px, transparent 8px) no-repeat 100% 100% / 8px 1px,
-    linear-gradient(to top, #fff 8px, transparent 8px) no-repeat 100% 100% / 1px 8px;
+  width: 8px;
+  height: 8px;
 }
-.project-card:hover .project-border {
+.corner-tl { left: -1px; top: -1px; border-left: 1px solid rgba(255,255,255,0.9); border-top: 1px solid rgba(255,255,255,0.9); }
+.corner-tr { right: -1px; top: -1px; border-right: 1px solid rgba(255,255,255,0.9); border-top: 1px solid rgba(255,255,255,0.9); }
+.corner-br { right: -1px; bottom: -1px; border-bottom: 1px solid rgba(255,255,255,0.9); border-right: 1px solid rgba(255,255,255,0.9); }
+.corner-bl { left: -1px; bottom: -1px; border-bottom: 1px solid rgba(255,255,255,0.9); border-left: 1px solid rgba(255,255,255,0.9); }
+.project-card:hover .project-card-inner {
   border-color: #555;
   transform: translateY(-3px);
-  box-shadow: 0 16px 35px #0008;
+  box-shadow:
+    0 16px 35px #0008,
+    0 0 0 1px rgba(255,255,255,0.06),
+    0 0 40px rgba(255,255,255,0.02);
 }
-.project-card:hover .project-border::before { opacity: 1; }
-.project-card:hover .project-border::after { opacity: 1; }
-.project-card:active .project-border {
+.project-card:hover .project-overlay { opacity: 1; }
+.project-card:active .project-card-inner {
   transform: translateY(0) scale(0.99);
 }
 
@@ -446,6 +493,7 @@ h1 {
   overflow: hidden;
   border-radius: 4px;
   background: #0e0f10;
+  z-index: 1;
 }
 .project-art {
   position: absolute;
@@ -457,6 +505,13 @@ h1 {
   z-index: 1;
   color: #666;
   font: 700 26px var(--display);
+  opacity: 0.5;
+  filter: grayscale(1);
+  transition: opacity 0.2s, filter 0.2s;
+}
+.project-card:hover .project-art span {
+  opacity: 1;
+  filter: grayscale(0);
 }
 .project-art i {
   position: absolute;
@@ -495,6 +550,7 @@ h1 {
 
 .project-info {
   margin-top: 8px;
+  z-index: 1;
 }
 .project-title-row {
   display: flex;
@@ -505,6 +561,9 @@ h1 {
   font-size: 14px;
   font-weight: 500;
 }
+.project-card:hover .project-title-row span:first-child {
+  color: #fff;
+}
 .project-status {
   color: #aaa;
   font: 400 8px var(--mono);
@@ -514,6 +573,9 @@ h1 {
   margin-top: 4px;
   font: 300 10px/15px var(--mono);
   color: var(--muted);
+}
+.project-card:hover .project-desc {
+  color: #999;
 }
 
 /* ── Skills ── */
@@ -629,7 +691,8 @@ h1 {
     opacity: 0.52;
   }
   .contribution-section { margin-top: 0; }
-  .month-labels { display: none; }
+  .month-labels { grid-template-columns: repeat(8, 1fr); font-size: 7px; }
+  .month-labels span:nth-child(n+9) { display: none; }
   .calendar {
     width: 100%;
     grid-template-rows: repeat(7, 1fr);

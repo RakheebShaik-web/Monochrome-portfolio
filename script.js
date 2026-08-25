@@ -25,14 +25,35 @@ function fallback() {
   }));
 }
 
+// Animated number ticker
+function animateNumber(el, target, duration = 1200) {
+  if (reduceMotion) { el.textContent = target.toLocaleString(); return; }
+  const start = performance.now();
+  const from = 0;
+  function tick(now) {
+    const elapsed = now - start;
+    const progress = Math.min(elapsed / duration, 1);
+    // Ease out cubic
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const current = Math.round(from + (target - from) * eased);
+    el.textContent = current.toLocaleString();
+    if (progress < 1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+
 fetch('https://github-contributions-api.jogruber.de/v4/RakheebShaik-web?y=last')
   .then(response => { if (!response.ok) throw new Error(); return response.json(); })
   .then(data => {
     if (!data.contributions?.length) throw new Error();
     renderCalendar(data.contributions);
-    total.textContent = data.contributions.reduce((sum, day) => sum + day.count, 0).toLocaleString();
+    const sum = data.contributions.reduce((s, d) => s + d.count, 0);
+    animateNumber(total, sum);
   })
-  .catch(fallback);
+  .catch(() => {
+    fallback();
+    animateNumber(total, 999);
+  });
 
 // System map animation
 const map = document.querySelector('.system-map');
@@ -43,6 +64,20 @@ if (map) {
     void map.offsetWidth;
     map.classList.add('is-running');
     setTimeout(() => map.classList.remove('is-running'), 1300);
+  });
+}
+
+// Cursor glow tracking
+const heroWrap = document.querySelector('.hero-section-wrap');
+const cursorGlow = document.querySelector('.cursor-glow');
+if (heroWrap && cursorGlow && !reduceMotion) {
+  heroWrap.addEventListener('mousemove', e => {
+    const rect = heroWrap.getBoundingClientRect();
+    cursorGlow.style.left = (e.clientX - rect.left) + 'px';
+    cursorGlow.style.top = (e.clientY - rect.top) + 'px';
+  });
+  heroWrap.addEventListener('mouseleave', () => {
+    cursorGlow.style.opacity = '0';
   });
 }
 
@@ -63,22 +98,50 @@ if ('IntersectionObserver' in window) {
   sections.forEach(section => navObserver.observe(section));
 }
 
-// Reveal animations
-if (!reduceMotion) {
-  const revealTargets = [
-    ...document.querySelectorAll('#hero-section > *'),
-    '.contribution-section',
-    '.timeline-wrapper',
-    '.social-section',
-    '.projects-section',
-    '.skills-section'
-  ];
-  revealTargets.forEach((selector, index) => {
-    const el = typeof selector === 'string' ? document.querySelector(selector) : selector;
-    if (el) {
-      el.classList.add('reveal');
-      el.style.animationDelay = `${index * 60}ms`;
-    }
+// Stagger reveal animations on scroll
+if (!reduceMotion && 'IntersectionObserver' in window) {
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  // Apply stagger delay to timeline items
+  document.querySelectorAll('.timeline-item').forEach((item, i) => {
+    item.classList.add('stagger-reveal');
+    item.style.transitionDelay = `${i * 100}ms`;
+    revealObserver.observe(item);
+  });
+
+  // Apply stagger delay to project cards
+  document.querySelectorAll('.project-card').forEach((card, i) => {
+    card.classList.add('stagger-reveal');
+    card.style.transitionDelay = `${i * 120}ms`;
+    revealObserver.observe(card);
+  });
+
+  // Apply stagger delay to skill tags
+  document.querySelectorAll('.skill-list span').forEach((tag, i) => {
+    tag.classList.add('stagger-reveal');
+    tag.style.transitionDelay = `${i * 40}ms`;
+    revealObserver.observe(tag);
+  });
+
+  // Apply stagger delay to social buttons
+  document.querySelectorAll('.social-buttons .button').forEach((btn, i) => {
+    btn.classList.add('stagger-reveal');
+    btn.style.transitionDelay = `${i * 80}ms`;
+    revealObserver.observe(btn);
+  });
+
+  // Reveal hero elements immediately with stagger
+  const heroChildren = document.querySelectorAll('#home > *:not(.cursor-glow)');
+  heroChildren.forEach((el, i) => {
+    el.classList.add('reveal');
+    el.style.animationDelay = `${i * 80}ms`;
   });
 }
 
