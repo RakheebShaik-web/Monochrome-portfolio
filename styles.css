@@ -200,16 +200,28 @@ h1 {
 
 /* ── Contribution Calendar ── */
 .contribution-section {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
   color: var(--muted);
 }
 .month-labels {
-  height: 16px;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  font-size: 8px;
-  line-height: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  font: 300 8px/12px var(--mono);
   color: #777;
+  padding-right: 6px;
+  writing-mode: horizontal-tb;
+}
+.month-labels span {
+  height: 12px;
+  display: flex;
+  align-items: center;
+}
+.calendar-row {
+  display: flex;
+  gap: 0;
 }
 .calendar-clip {
   width: 100%;
@@ -617,8 +629,7 @@ h1 {
     opacity: 0.52;
   }
   .contribution-section { margin-top: 0; }
-  .month-labels { grid-template-columns: repeat(8, 1fr); }
-  .month-labels span:nth-child(n+9) { display: none; }
+  .month-labels { display: none; }
   .calendar {
     width: 100%;
     grid-template-rows: repeat(7, 1fr);
