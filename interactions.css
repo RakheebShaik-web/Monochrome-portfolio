@@ -1,112 +1,38 @@
-/* ── Stagger reveal ── */
-.stagger-reveal {
-  opacity: 0;
-  transform: translateY(12px);
-  transition: opacity 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-.stagger-reveal.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+/* ═══════════════════════════════════════════
+   INTERACTIONS — hover, reveal, animations
+   ═══════════════════════════════════════════ */
 
-/* ── Dock hover ── */
-.dock-inner {
-  transition: border-color 0.2s, background 0.2s, box-shadow 0.25s;
-}
+/* Dock hover */
+.dock-inner { transition: border-color 0.2s, background 0.2s, box-shadow 0.25s; }
 .dock:hover .dock-inner {
-  border-color: #444;
-  background: #1a1b1ce8;
-  box-shadow: 0 15px 42px #000c;
+  border-color: hsl(var(--border));
+  background: rgba(26, 27, 28, 0.9);
+  box-shadow: 0 15px 42px rgba(0,0,0,0.75);
 }
-.dock-item:hover,
-.dock-item.active {
-  color: #fff;
-  transform: scale(1.1);
-}
-.dock-item:active {
-  transform: scale(0.96);
-}
+.dock-item:hover { color: #fff; transform: scale(1.1); }
+.dock-item:active { transform: scale(0.96); }
 
-/* ── Contribution section hover ── */
-.contribution-section:hover > p {
-  color: #aaa;
-}
+/* Contribution section hover */
+.contribution-section:hover > p { color: #aaa; }
 
-/* ── Timeline hover ── */
-.timeline-item:hover {
-  transform: translateY(-2px);
-}
-.timeline-item:hover .timeline-dot {
-  border-color: #777;
-}
+/* Work entry hover */
+.work-entry { transition: transform 0.25s cubic-bezier(0.2,0.8,0.2,1); }
+.work-entry:hover { transform: translateY(-2px); }
 
-/* ── Project card hover ── */
-.project-card:hover .project-info span:first-child {
-  transform: translateX(2px);
-}
-.project-card:hover .project-desc {
-  color: #999;
-}
-
-/* ── Skill tag hover ── */
-.skill-list span {
-  transition: color 0.2s, background-color 0.2s, border-color 0.2s, transform 0.25s cubic-bezier(0.2,0.8,0.2,1), box-shadow 0.25s, filter 0.2s, opacity 0.2s;
-}
-
-/* ── Trading map hover ── */
-.trading-map .node-box {
-  transition: border-color 0.3s, box-shadow 0.3s, background 0.3s;
-}
+/* Trading map subtle entrance */
+.trading-map .node-box { transition: border-color 0.3s, box-shadow 0.3s, background 0.3s; }
 .trading-map:hover .node-box {
   border-color: #444;
   box-shadow: 0 4px 20px #000, 0 0 12px rgba(255,255,255,0.03);
 }
-.trading-map:hover .node-label {
-  color: #999;
-}
-.trading-map:hover .node-dashed {
-  border-color: #333;
-}
+.trading-map:hover .node-label { color: #999; }
+.trading-map:hover .node-dashed { border-color: #333; }
 
-/* ── Reveal animation ── */
-.reveal {
-  opacity: 0;
-  transform: translateY(10px);
-  animation: reveal 0.6s both cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-@keyframes reveal {
-  to { opacity: 1; transform: none; }
-}
-
-/* ── Day hover pulse ── */
-.day { transition: filter 0.2s, transform 0.25s cubic-bezier(0.2,0.8,0.2,1), box-shadow 0.25s; }
-.day:hover {
-  filter: brightness(1.8);
-  transform: scale(1.6);
-  z-index: 2;
-  box-shadow: 0 0 6px rgba(255,255,255,0.15);
-}
-
-/* ── Touch device overrides ── */
+/* Touch device overrides */
 @media (hover: none) {
   .dock-item:hover { transform: none; }
   .day:hover { transform: none; }
   .button:active,
-  .project-card:active .project-border,
-  .skill-list span:active {
-    filter: brightness(1.3);
-  }
-}
-
-/* ── Reduced motion ── */
-@media (prefers-reduced-motion: reduce) {
-  .reveal, .stagger-reveal {
-    opacity: 1;
-    transform: none;
-    animation: none;
-    transition: none;
-  }
-  .system-map.is-running .node {
-    animation: none;
-  }
+  .project-card:active .project-card-inner,
+  .skill-tags span:active { filter: brightness(1.3); }
 }

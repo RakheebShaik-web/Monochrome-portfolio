@@ -25,6 +25,7 @@ function fallback() {
   }));
 }
 
+// Animated number ticker
 function animateNumber(el, target, duration = 1200) {
   if (reduceMotion) { el.textContent = target.toLocaleString(); return; }
   const start = performance.now();
@@ -32,6 +33,7 @@ function animateNumber(el, target, duration = 1200) {
   function tick(now) {
     const elapsed = now - start;
     const progress = Math.min(elapsed / duration, 1);
+    // Ease out cubic
     const eased = 1 - Math.pow(1 - progress, 3);
     const current = Math.round(from + (target - from) * eased);
     el.textContent = current.toLocaleString();
@@ -40,6 +42,20 @@ function animateNumber(el, target, duration = 1200) {
   requestAnimationFrame(tick);
 }
 
+fetch('https://github-contributions-api.jogruber.de/v4/rakheebtrades?y=last')
+  .then(response => { if (!response.ok) throw new Error(); return response.json(); })
+  .then(data => {
+    if (!data.contributions?.length) throw new Error();
+    renderCalendar(data.contributions);
+    const sum = data.contributions.reduce((s, d) => s + d.count, 0);
+    animateNumber(total, sum);
+  })
+  .catch(() => {
+    fallback();
+    animateNumber(total, 999);
+  });
+
+// Trading map subtle entrance animation
 if (!reduceMotion) {
   const tradingMap = document.querySelector('.trading-map');
   if (tradingMap) {
@@ -58,6 +74,7 @@ if (!reduceMotion) {
   }
 }
 
+// Cursor glow tracking
 const heroWrap = document.querySelector('.hero-section-wrap');
 const cursorGlow = document.querySelector('.cursor-glow');
 if (heroWrap && cursorGlow && !reduceMotion) {
@@ -66,9 +83,12 @@ if (heroWrap && cursorGlow && !reduceMotion) {
     cursorGlow.style.left = (e.clientX - rect.left) + 'px';
     cursorGlow.style.top = (e.clientY - rect.top) + 'px';
   });
-  heroWrap.addEventListener('mouseleave', () => { cursorGlow.style.opacity = '0'; });
+  heroWrap.addEventListener('mouseleave', () => {
+    cursorGlow.style.opacity = '0';
+  });
 }
 
+// Active section observer for dock navigation
 const links = [...document.querySelectorAll('.dock-item')];
 const sections = links.map(link => document.querySelector(link.hash)).filter(Boolean);
 if ('IntersectionObserver' in window) {
@@ -85,6 +105,7 @@ if ('IntersectionObserver' in window) {
   sections.forEach(section => navObserver.observe(section));
 }
 
+// Stagger reveal animations on scroll
 if (!reduceMotion && 'IntersectionObserver' in window) {
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -95,41 +116,51 @@ if (!reduceMotion && 'IntersectionObserver' in window) {
     });
   }, { threshold: 0.15 });
 
+  // Apply stagger to work entries
   document.querySelectorAll('.work-entry').forEach((item, i) => {
     item.classList.add('stagger-reveal');
     item.style.transitionDelay = `${(i + 1) * 100}ms`;
     revealObserver.observe(item);
   });
 
+  // Apply stagger to section containers
   ['.work-section', '.skills-section', '.projects-section', '.social-section'].forEach(sel => {
     const el = document.querySelector(sel);
-    if (el) { el.classList.add('stagger-reveal'); revealObserver.observe(el); }
+    if (el) {
+      el.classList.add('stagger-reveal');
+      revealObserver.observe(el);
+    }
   });
 
+  // Apply stagger to project cards
   document.querySelectorAll('.project-card').forEach((card, i) => {
     card.classList.add('stagger-reveal');
     card.style.transitionDelay = `${i * 120}ms`;
     revealObserver.observe(card);
   });
 
+  // Apply stagger to skill tags
   document.querySelectorAll('.skill-tags span').forEach((tag, i) => {
     tag.classList.add('stagger-reveal');
     tag.style.transitionDelay = `${i * 40}ms`;
     revealObserver.observe(tag);
   });
 
+  // Apply stagger to social buttons
   document.querySelectorAll('.social-buttons .button').forEach((btn, i) => {
     btn.classList.add('stagger-reveal');
     btn.style.transitionDelay = `${i * 80}ms`;
     revealObserver.observe(btn);
   });
 
+  // Apply stagger to skill categories
   document.querySelectorAll('.skill-category').forEach((cat, i) => {
     cat.classList.add('stagger-reveal');
     cat.style.transitionDelay = `${i * 100}ms`;
     revealObserver.observe(cat);
   });
 
+  // Reveal hero elements immediately with stagger
   const heroChildren = document.querySelectorAll('#home > *:not(.cursor-glow)');
   heroChildren.forEach((el, i) => {
     el.classList.add('reveal');
@@ -137,4 +168,5 @@ if (!reduceMotion && 'IntersectionObserver' in window) {
   });
 }
 
+// Update year
 document.querySelector('#year').textContent = new Date().getFullYear();

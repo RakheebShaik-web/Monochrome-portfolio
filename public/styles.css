@@ -30,10 +30,6 @@
 /* ═══════════════════════════════════════════
    RESET
    ═══════════════════════════════════════════ */
-<<<<<<< HEAD
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-=======
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -44,21 +40,12 @@ html {
   scroll-behavior: smooth;
 }
 
->>>>>>> 1297db1 (Initial: gurbinder.dev-style portfolio for Rakheeb (algo trader))
 body {
   background: hsl(var(--background));
   color: hsl(var(--foreground));
   font-family: var(--font-figtree);
   -webkit-font-smoothing: antialiased;
   line-height: 1.5;
-<<<<<<< HEAD
-}
-a { color: inherit; text-decoration: none; }
-button { font: inherit; color: inherit; cursor: pointer; background: none; border: none; }
-::selection { background: #fff; color: #000; }
-:focus-visible { outline: 2px solid transparent; }
-img { display: block; max-width: 100%; }
-=======
   min-height: 100vh;
 }
 
@@ -90,105 +77,9 @@ img {
 }
 
 /* ═══════════════════════════════════════════
-   TRADING SETUP HEADER
-   ═══════════════════════════════════════════ */
-.trading-setup {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.625rem 1rem;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid hsl(var(--border) / 0.5);
-}
-
-.setup-grid {
-  display: flex;
-  gap: 1.5rem;
-}
-
-.setup-stat {
-  display: flex;
-  flex-direction: column;
-  gap: 0.125rem;
-  min-width: 60px;
-}
-
-.stat-label {
-  font-family: var(--font-jetbrains);
-  font-size: 0.5rem;
-  letter-spacing: 0.1em;
-  color: hsl(var(--muted-foreground) / 0.6);
-}
-
-.stat-value {
-  font-family: var(--font-doto);
-  font-size: 0.875rem;
-  font-weight: 700;
-  color: #fff;
-  transition: color 0.3s;
-}
-
-.stat-value.live {
-  color: #22c55e;
-  animation: pulse-live 2s ease-in-out infinite;
-}
-
-.stat-sub {
-  font-family: var(--font-jetbrains);
-  font-size: 0.5rem;
-  color: hsl(var(--muted-foreground) / 0.5);
-}
-
-.setup-status {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-family: var(--font-jetbrains);
-  font-size: 0.625rem;
-  color: hsl(var(--muted-foreground) / 0.7);
-}
-
-.status-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #555;
-}
-
-.status-dot.live {
-  background: #22c55e;
-  box-shadow: 0 0 6px rgba(34, 197, 94, 0.5);
-  animation: pulse-dot 2s ease-in-out infinite;
-}
-
-@keyframes pulse-live {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.7; }
-}
-
-@keyframes pulse-dot {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.2); opacity: 0.8; }
-}
->>>>>>> 1297db1 (Initial: gurbinder.dev-style portfolio for Rakheeb (algo trader))
-
-/* ═══════════════════════════════════════════
    SKIP LINK
    ═══════════════════════════════════════════ */
 .skip-link {
-<<<<<<< HEAD
-  position: fixed; top: -90px; left: 16px; z-index: 1100;
-  background: #fff; color: #000; padding: 8px 12px; font-size: 12px;
-}
-.skip-link:focus { top: 16px; }
-=======
   position: fixed;
   top: -90px;
   left: 16px;
@@ -202,7 +93,6 @@ img {
 .skip-link:focus {
   top: 16px;
 }
->>>>>>> 1297db1 (Initial: gurbinder.dev-style portfolio for Rakheeb (algo trader))
 
 /* ═══════════════════════════════════════════
    PAGE LAYOUT — exact from gurbinder.dev
@@ -211,40 +101,22 @@ img {
   min-height: 100svh;
   max-width: 700px;
   margin: 0 auto;
-<<<<<<< HEAD
   padding: 3.5rem 1rem 8rem;
 }
-=======
-  padding: 4rem 1rem 8rem;
-}
 
->>>>>>> 1297db1 (Initial: gurbinder.dev-style portfolio for Rakheeb (algo trader))
 .page-col {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
-<<<<<<< HEAD
-.box { margin-top: 2.5rem; }
-
-/* Font utility classes */
-.jetbrains-mono { font-family: var(--font-jetbrains); }
-.figtree-font { font-family: var(--font-figtree); }
-.doto-font { font-family: var(--font-doto); }
-=======
->>>>>>> 1297db1 (Initial: gurbinder.dev-style portfolio for Rakheeb (algo trader))
 
 /* ═══════════════════════════════════════════
    HERO SECTION
    ═══════════════════════════════════════════ */
-<<<<<<< HEAD
-.hero-section-wrap { position: relative; overflow: hidden; }
-=======
 .hero-section-wrap {
   position: relative;
   overflow: hidden;
 }
->>>>>>> 1297db1 (Initial: gurbinder.dev-style portfolio for Rakheeb (algo trader))
 
 .eyebrow {
   display: flex;
@@ -255,14 +127,10 @@ img {
   letter-spacing: -0.04em;
   color: hsl(var(--muted-foreground) / 0.6);
 }
-<<<<<<< HEAD
-.eyebrow svg { opacity: 0.5; }
-=======
 
 .eyebrow svg {
   opacity: 0.5;
 }
->>>>>>> 1297db1 (Initial: gurbinder.dev-style portfolio for Rakheeb (algo trader))
 
 h1 {
   margin: 0.25rem 0 0;
@@ -271,15 +139,11 @@ h1 {
   font-weight: 700;
   line-height: 2rem;
 }
-<<<<<<< HEAD
-.name-display { position: relative; }
-=======
 
 .name-display {
   position: relative;
 }
 
->>>>>>> 1297db1 (Initial: gurbinder.dev-style portfolio for Rakheeb (algo trader))
 .name-handle {
   font-family: var(--font-jetbrains);
   font-size: 0.75rem;
@@ -287,21 +151,6 @@ h1 {
   letter-spacing: -0.025em;
   color: hsl(var(--muted-foreground) / 0.6);
   transition: color 0.2s;
-<<<<<<< HEAD
-}
-.name-handle:hover { color: #fff; }
-.name-handle .at { font-size: 0.625rem; }
-
-.intro-text, .about-text {
-  font-size: 0.875rem;
-  color: hsl(var(--muted-foreground));
-}
-.intro-text strong, .about-text strong {
-  color: #fff;
-  font-weight: 500;
-}
-.about-text { max-width: 24rem; }
-=======
   display: inline-flex;
   align-items: center;
   gap: 0.125rem;
@@ -331,17 +180,13 @@ h1 {
   max-width: 24rem;
 }
 
->>>>>>> 1297db1 (Initial: gurbinder.dev-style portfolio for Rakheeb (algo trader))
 .actions {
   display: flex;
   align-items: center;
   gap: 0.5rem;
   margin-top: 1.25rem;
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> 1297db1 (Initial: gurbinder.dev-style portfolio for Rakheeb (algo trader))
 .or {
   font-family: var(--font-jetbrains);
   font-size: 0.625rem;
@@ -376,26 +221,13 @@ h1 {
     0 0 0 1px #000,
     inset 0 0 0 1px #ffffff14,
     inset 0 1px 0 #ffffff33;
-<<<<<<< HEAD
-  transition: background-color 0.2s, color 0.2s, transform 0.25s cubic-bezier(0.2,0.8,0.2,1);
-}
-=======
   transition: background-color 0.2s, color 0.2s, transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
->>>>>>> 1297db1 (Initial: gurbinder.dev-style portfolio for Rakheeb (algo trader))
 .button::after {
   content: "";
   position: absolute;
   inset: 0;
-<<<<<<< HEAD
-  background: linear-gradient(105deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
-  transform: translateX(-150%);
-  transition: transform 0.6s cubic-bezier(0.2,0.8,0.2,1);
-}
-.button:hover::after { transform: translateX(150%); }
-.button svg { width: 14px; height: 14px; flex-shrink: 0; pointer-events: none; }
-=======
   background: linear-gradient(105deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
   transform: translateX(-150%);
   transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -412,20 +244,15 @@ h1 {
   pointer-events: none;
 }
 
->>>>>>> 1297db1 (Initial: gurbinder.dev-style portfolio for Rakheeb (algo trader))
 .button:hover {
   background: var(--card-color-fg);
   color: var(--brand);
   transform: translateY(-1px);
 }
-<<<<<<< HEAD
-.button:active { transform: translateY(1px) scale(0.98); }
-=======
 
 .button:active {
   transform: translateY(1px) scale(0.98);
 }
->>>>>>> 1297db1 (Initial: gurbinder.dev-style portfolio for Rakheeb (algo trader))
 
 /* ═══════════════════════════════════════════
    TRADING WORKFLOW MAP
@@ -439,10 +266,7 @@ h1 {
   pointer-events: none;
   opacity: 0.8;
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> 1297db1 (Initial: gurbinder.dev-style portfolio for Rakheeb (algo trader))
 .map-magik {
   position: absolute;
   right: -8px;
@@ -458,33 +282,23 @@ h1 {
   cursor: pointer;
   transition: color 0.2s;
 }
-<<<<<<< HEAD
-.map-magik:hover { color: #888; }
-=======
 
 .map-magik:hover {
   color: #888;
 }
 
->>>>>>> 1297db1 (Initial: gurbinder.dev-style portfolio for Rakheeb (algo trader))
 .map-row {
   display: flex;
   align-items: center;
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> 1297db1 (Initial: gurbinder.dev-style portfolio for Rakheeb (algo trader))
 .map-node {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 6px;
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> 1297db1 (Initial: gurbinder.dev-style portfolio for Rakheeb (algo trader))
 .node-box {
   width: 52px;
   height: 52px;
@@ -495,31 +309,20 @@ h1 {
   place-items: center;
   box-shadow: 0 4px 16px #000, inset 0 1px 0 #ffffff08;
   position: relative;
-<<<<<<< HEAD
   transition: border-color 0.3s, box-shadow 0.3s;
 }
-=======
-  transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
-}
 
->>>>>>> 1297db1 (Initial: gurbinder.dev-style portfolio for Rakheeb (algo trader))
 .node-dashed {
   border-style: dashed;
   background: transparent;
   box-shadow: none;
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> 1297db1 (Initial: gurbinder.dev-style portfolio for Rakheeb (algo trader))
 .node-active {
   border-color: #444;
   background: linear-gradient(145deg, #222, #181818);
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> 1297db1 (Initial: gurbinder.dev-style portfolio for Rakheeb (algo trader))
 .node-box::after {
   content: "";
   position: absolute;
@@ -529,27 +332,13 @@ h1 {
   height: 5px;
   border-radius: 50%;
   background: #333;
-<<<<<<< HEAD
   transition: background 0.3s;
-}
-.node-active::after { background: #f59e0b; }
-=======
-  transition: background 0.3s, box-shadow 0.3s;
 }
 
 .node-active::after {
   background: #f59e0b;
 }
 
-.node-box:hover {
-  transform: scale(1.05);
-}
-
-.node-box:hover::after {
-  box-shadow: 0 0 8px rgba(245, 158, 11, 0.6);
-}
-
->>>>>>> 1297db1 (Initial: gurbinder.dev-style portfolio for Rakheeb (algo trader))
 .node-label {
   font-family: var(--font-jetbrains);
   font-size: 0.5625rem;
@@ -557,11 +346,6 @@ h1 {
   white-space: nowrap;
   transition: color 0.2s;
 }
-<<<<<<< HEAD
-.trading-map:hover .node-label { color: #999; }
-.trading-map:hover .node-box { border-color: #3a3b3c; }
-.map-wire { flex-shrink: 0; }
-=======
 
 .trading-map:hover .node-label {
   color: #999;
@@ -575,16 +359,12 @@ h1 {
   flex-shrink: 0;
 }
 
->>>>>>> 1297db1 (Initial: gurbinder.dev-style portfolio for Rakheeb (algo trader))
 .wire-h {
   width: 28px;
   height: 1px;
   border-top: 1px dashed #2a2b2c;
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> 1297db1 (Initial: gurbinder.dev-style portfolio for Rakheeb (algo trader))
 .wire-v-right {
   width: 1px;
   height: 20px;
@@ -596,15 +376,11 @@ h1 {
 /* ═══════════════════════════════════════════
    CONTRIBUTION CALENDAR
    ═══════════════════════════════════════════ */
-<<<<<<< HEAD
-.contribution-section { display: block; color: hsl(var(--muted-foreground)); }
-=======
 .contribution-section {
   display: block;
   color: hsl(var(--muted-foreground));
 }
 
->>>>>>> 1297db1 (Initial: gurbinder.dev-style portfolio for Rakheeb (algo trader))
 .month-labels {
   height: 0.875rem;
   display: grid;
@@ -614,16 +390,12 @@ h1 {
   line-height: 0.75rem;
   color: #777;
 }
-<<<<<<< HEAD
-.calendar-clip { width: 100%; overflow: hidden; }
-=======
 
 .calendar-clip {
   width: 100%;
   overflow: hidden;
 }
 
->>>>>>> 1297db1 (Initial: gurbinder.dev-style portfolio for Rakheeb (algo trader))
 .calendar {
   display: grid;
   grid-template-rows: repeat(7, 9px);
@@ -632,18 +404,6 @@ h1 {
   gap: 3px;
   width: max-content;
 }
-<<<<<<< HEAD
-.day {
-  width: 9px; height: 9px;
-  border-radius: 2px;
-  background: hsl(0 0% 22%);
-  transition: filter 0.2s, transform 0.25s cubic-bezier(0.2,0.8,0.2,1), box-shadow 0.25s;
-}
-.day[data-level="1"] { background: color-mix(in oklab, hsl(0 0% 92%) 25%, hsl(0 0% 22%)); }
-.day[data-level="2"] { background: color-mix(in oklab, hsl(0 0% 92%) 50%, hsl(0 0% 22%)); }
-.day[data-level="3"] { background: color-mix(in oklab, hsl(0 0% 92%) 75%, hsl(0 0% 22%)); }
-.day[data-level="4"] { background: hsl(0 0% 92%); }
-=======
 
 .day {
   width: 9px;
@@ -669,19 +429,13 @@ h1 {
   background: hsl(0 0% 92%);
 }
 
->>>>>>> 1297db1 (Initial: gurbinder.dev-style portfolio for Rakheeb (algo trader))
 .day:hover {
   filter: brightness(1.8);
   transform: scale(1.6);
   z-index: 2;
-<<<<<<< HEAD
-  box-shadow: 0 0 6px rgba(255,255,255,0.15);
-}
-=======
   box-shadow: 0 0 6px rgba(255, 255, 255, 0.15);
 }
 
->>>>>>> 1297db1 (Initial: gurbinder.dev-style portfolio for Rakheeb (algo trader))
 .contribution-section > p {
   margin: 0.5rem 0 0;
   font-family: var(--font-jetbrains);
@@ -689,10 +443,6 @@ h1 {
   line-height: 0.8125rem;
   color: #777;
 }
-<<<<<<< HEAD
-.contribution-section > p strong { font-weight: 300; }
-.contribution-total { display: inline-block; }
-=======
 
 .contribution-section > p strong {
   font-weight: 300;
@@ -701,54 +451,27 @@ h1 {
 .contribution-total {
   display: inline-block;
 }
->>>>>>> 1297db1 (Initial: gurbinder.dev-style portfolio for Rakheeb (algo trader))
 
 /* ═══════════════════════════════════════════
    WORK EXPERIENCE — gurbinder.dev style
    ═══════════════════════════════════════════ */
-<<<<<<< HEAD
-.work-section { display: flex; flex-direction: column; }
-.work-header, .skills-header {
-  display: flex;
-  align-items: baseline;
-  gap: 0.75rem;
-  margin-bottom: 1.5rem;
-}
-.work-title, .skills-title {
-  font-family: var(--font-doto);
-  font-size: 1.5rem;
-  font-weight: 700;
-  line-height: 2rem;
-  color: #fff;
-}
-.work-subtitle, .skills-subtitle {
-  font-family: var(--font-jetbrains);
-  font-size: 0.75rem;
-  color: hsl(var(--muted-foreground));
-}
-=======
 .work-section {
   display: flex;
   flex-direction: column;
 }
 
->>>>>>> 1297db1 (Initial: gurbinder.dev-style portfolio for Rakheeb (algo trader))
 .work-entry {
   display: flex;
   gap: 1rem;
   padding: 1rem 0;
   border-top: 1px solid hsl(var(--border));
 }
-<<<<<<< HEAD
-.work-entry:first-of-type { border-top: none; padding-top: 0; }
-=======
 
 .work-entry:first-of-type {
   border-top: none;
   padding-top: 0;
 }
 
->>>>>>> 1297db1 (Initial: gurbinder.dev-style portfolio for Rakheeb (algo trader))
 .work-icon {
   width: 2.5rem;
   height: 2.5rem;
@@ -763,21 +486,6 @@ h1 {
   color: #555;
   background: hsl(var(--card));
   flex-shrink: 0;
-<<<<<<< HEAD
-}
-.work-icon.active-icon {
-  background: linear-gradient(135deg, #333, #1a1a1a);
-}
-.work-icon.active-icon span { color: #fff; }
-.work-details { flex: 1; min-width: 0; }
-=======
-  transition: background-color 0.2s, border-color 0.2s, transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-
-.work-icon:hover {
-  background: hsl(var(--card-color-fg));
-  border-color: hsl(var(--border) / 0.8);
-  transform: translateY(-2px);
 }
 
 .work-icon.active-icon {
@@ -793,26 +501,19 @@ h1 {
   min-width: 0;
 }
 
->>>>>>> 1297db1 (Initial: gurbinder.dev-style portfolio for Rakheeb (algo trader))
 .work-row {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   gap: 0.75rem;
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> 1297db1 (Initial: gurbinder.dev-style portfolio for Rakheeb (algo trader))
 .work-company {
   font-size: 0.875rem;
   font-weight: 600;
   color: #fff;
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> 1297db1 (Initial: gurbinder.dev-style portfolio for Rakheeb (algo trader))
 .work-badge {
   display: inline-block;
   margin-left: 0.5rem;
@@ -825,20 +526,14 @@ h1 {
   color: hsl(var(--muted-foreground));
   vertical-align: middle;
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> 1297db1 (Initial: gurbinder.dev-style portfolio for Rakheeb (algo trader))
 .work-role {
   display: block;
   margin-top: 0.125rem;
   font-size: 0.8125rem;
   color: hsl(var(--muted-foreground));
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> 1297db1 (Initial: gurbinder.dev-style portfolio for Rakheeb (algo trader))
 .work-meta {
   display: flex;
   flex-direction: column;
@@ -846,50 +541,31 @@ h1 {
   flex-shrink: 0;
   text-align: right;
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> 1297db1 (Initial: gurbinder.dev-style portfolio for Rakheeb (algo trader))
 .work-date {
   font-family: var(--font-jetbrains);
   font-size: 0.75rem;
   color: hsl(var(--muted-foreground));
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> 1297db1 (Initial: gurbinder.dev-style portfolio for Rakheeb (algo trader))
 .work-location {
   font-family: var(--font-jetbrains);
   font-size: 0.6875rem;
   color: hsl(var(--muted-foreground) / 0.6);
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> 1297db1 (Initial: gurbinder.dev-style portfolio for Rakheeb (algo trader))
 .work-bullets {
   margin: 0.5rem 0 0 1rem;
   padding: 0;
   list-style: disc;
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> 1297db1 (Initial: gurbinder.dev-style portfolio for Rakheeb (algo trader))
 .work-bullets li {
   font-size: 0.8125rem;
   line-height: 1.25rem;
   color: hsl(var(--muted-foreground));
   margin-bottom: 0.25rem;
 }
-<<<<<<< HEAD
-.work-bullets li::marker { color: #444; }
-
-/* ═══════════════════════════════════════════
-   PROJECTS — dashed border cards
-   ═══════════════════════════════════════════ */
-=======
 
 .work-bullets li::marker {
   color: #444;
@@ -971,14 +647,13 @@ h1 {
   font-family: var(--font-jetbrains);
   font-size: 0.6875rem;
   color: hsl(var(--muted-foreground));
-  transition: background-color 0.2s, color 0.2s, transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.25s;
+  transition: background-color 0.2s, color 0.2s, transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .skill-tags span:hover {
   background: hsl(var(--card-color-fg));
   color: #fff;
   transform: translateY(-1px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 /* ═══════════════════════════════════════════
@@ -997,14 +672,13 @@ h1 {
   border-radius: 0.5rem;
   background: hsl(var(--card));
   border: 1px solid hsl(var(--border));
-  transition: background-color 0.2s, border-color 0.2s, transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.25s;
+  transition: background-color 0.2s, border-color 0.2s, transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .system-card:hover {
   background: hsl(var(--card-color-fg));
   border-color: hsl(var(--border) / 0.8);
   transform: translateY(-2px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 .system-icon {
@@ -1017,22 +691,12 @@ h1 {
   justify-content: center;
   flex-shrink: 0;
   border: 1px solid hsl(var(--border));
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.system-card:hover .system-icon {
-  transform: scale(1.1);
 }
 
 .system-icon svg {
   width: 18px;
   height: 18px;
   color: hsl(var(--muted-foreground));
-  transition: color 0.2s;
-}
-
-.system-card:hover .system-icon svg {
-  color: #fff;
 }
 
 .system-content {
@@ -1046,11 +710,6 @@ h1 {
   font-size: 0.8125rem;
   font-weight: 600;
   color: #fff;
-  transition: color 0.2s;
-}
-
-.system-card:hover .system-name {
-  color: hsl(var(--accent));
 }
 
 .system-desc {
@@ -1066,215 +725,11 @@ h1 {
   flex-direction: column;
 }
 
->>>>>>> 1297db1 (Initial: gurbinder.dev-style portfolio for Rakheeb (algo trader))
 .project-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
 }
-<<<<<<< HEAD
-.project-card { display: block; min-width: 0; }
-.project-wide { grid-column: 1 / -1; }
-.project-card-inner {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  border: 1px dashed hsl(var(--border) / 0.5);
-  padding: 0.5rem;
-  transition: border-color 0.2s, transform 0.25s cubic-bezier(0.2,0.8,0.2,1), box-shadow 0.25s;
-}
-.project-overlay {
-  pointer-events: none;
-  position: absolute;
-  inset: -1px;
-  z-index: 10;
-  border: 1px dashed rgba(255,255,255,0.15);
-  background: hsl(var(--muted) / 0.15);
-  opacity: 0;
-  transition: opacity 0.2s;
-}
-.corner-tl, .corner-tr, .corner-br, .corner-bl {
-  position: absolute;
-  width: 8px;
-  height: 8px;
-}
-.corner-tl { left: -1px; top: -1px; border-left: 1px solid rgba(255,255,255,0.9); border-top: 1px solid rgba(255,255,255,0.9); }
-.corner-tr { right: -1px; top: -1px; border-right: 1px solid rgba(255,255,255,0.9); border-top: 1px solid rgba(255,255,255,0.9); }
-.corner-br { right: -1px; bottom: -1px; border-bottom: 1px solid rgba(255,255,255,0.9); border-right: 1px solid rgba(255,255,255,0.9); }
-.corner-bl { left: -1px; bottom: -1px; border-bottom: 1px solid rgba(255,255,255,0.9); border-left: 1px solid rgba(255,255,255,0.9); }
-.project-card:hover .project-card-inner {
-  border-color: #555;
-  transform: translateY(-3px);
-  box-shadow: 0 16px 35px #0008, 0 0 0 1px rgba(255,255,255,0.06), 0 0 40px rgba(255,255,255,0.02);
-}
-.project-card:hover .project-overlay { opacity: 1; }
-.project-card:active .project-card-inner { transform: translateY(0) scale(0.99); }
-.project-preview {
-  position: relative;
-  height: 11rem;
-  min-height: 11rem;
-  overflow: hidden;
-  border-radius: 0.25rem;
-  background: #0e0f10;
-  z-index: 1;
-}
-.project-art {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-items: center;
-}
-.project-art span {
-  z-index: 1;
-  color: #666;
-  font-family: var(--font-doto);
-  font-weight: 700;
-  font-size: 1.625rem;
-  opacity: 0.5;
-  filter: grayscale(1);
-  transition: opacity 0.2s, filter 0.2s;
-}
-.project-card:hover .project-art span { opacity: 1; filter: grayscale(0); }
-.project-art i {
-  position: absolute;
-  top: 10px; left: 10px;
-  color: #414141;
-  font-family: var(--font-jetbrains);
-  font-size: 0.5rem;
-  font-style: normal;
-}
-.project-art b {
-  position: absolute;
-  right: 10px; bottom: 8px;
-  color: #333;
-  font-family: var(--font-jetbrains);
-  font-size: 0.625rem;
-  font-weight: normal;
-}
-.project-preview::before, .project-preview::after {
-  content: "";
-  position: absolute;
-  border: 1px solid #202224;
-}
-.project-preview::before { width: 180px; height: 90px; top: 50%; left: 50%; transform: translate(-50%, -50%); }
-.project-preview::after { width: 110px; height: 130px; top: 50%; left: 50%; transform: translate(-50%, -50%); }
-.options-art ~ .project-preview::before { transform: translate(-50%, -50%) rotate(35deg); }
-.options-art ~ .project-preview::after { transform: translate(-50%, -50%) rotate(-20deg); }
-.project-info { margin-top: 0.5rem; z-index: 1; }
-.project-title-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.project-title-row span:first-child { font-size: 0.875rem; font-weight: 500; }
-.project-card:hover .project-title-row span:first-child { color: #fff; }
-.project-status {
-  color: #aaa;
-  font-family: var(--font-jetbrains);
-  font-size: 0.5rem;
-}
-.project-desc {
-  display: block;
-  margin-top: 0.25rem;
-  font-family: var(--font-jetbrains);
-  font-size: 0.625rem;
-  line-height: 0.9375rem;
-  color: hsl(var(--muted-foreground));
-}
-.project-card:hover .project-desc { color: #999; }
-
-/* ═══════════════════════════════════════════
-   SKILLS — categorized grid
-   ═══════════════════════════════════════════ */
-.skills-section { display: flex; flex-direction: column; }
-.skills-intro {
-  font-size: 0.875rem;
-  line-height: 1.375rem;
-  color: hsl(var(--muted-foreground));
-  margin-bottom: 0.5rem;
-}
-.pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3125rem;
-  padding: 0.125rem 0.625rem;
-  border: 1px solid hsl(var(--border));
-  border-radius: 0.375rem;
-  background: var(--card-color);
-  color: #ccc;
-  font-family: var(--font-jetbrains);
-  font-size: 0.6875rem;
-  vertical-align: middle;
-  margin: 0 0.125rem;
-  transition: border-color 0.2s, color 0.2s;
-}
-.pill:hover { border-color: #555; color: #fff; }
-.skill-category { margin-top: 1.25rem; }
-.category-label {
-  display: block;
-  margin-bottom: 0.625rem;
-  font-family: var(--font-jetbrains);
-  font-size: 0.6875rem;
-  color: hsl(var(--muted-foreground) / 0.7);
-}
-.skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-.skill-tags span {
-  height: 1.5rem;
-  padding: 0.25rem 0.5625rem;
-  border: 1px solid hsl(var(--border));
-  border-radius: 0.375rem;
-  background: #111314;
-  color: #9a9a9a;
-  font-family: var(--font-jetbrains);
-  font-size: 0.625rem;
-  line-height: 0.9375rem;
-  transition: color 0.2s, background 0.2s, border-color 0.2s, transform 0.25s cubic-bezier(0.2,0.8,0.2,1);
-}
-.skill-tags span:hover {
-  color: #fff;
-  border-color: #555;
-  background: var(--card-color);
-  transform: translateY(-1px);
-}
-.skill-tags span:active { transform: translateY(1px); }
-
-/* ═══════════════════════════════════════════
-   SOCIAL / CONTACT
-   ═══════════════════════════════════════════ */
-.section-label {
-  display: block;
-  font-size: 0.875rem;
-  color: hsl(var(--muted-foreground));
-  margin-bottom: 1rem;
-}
-.section-label strong { color: #fff; font-weight: 500; }
-.social-buttons { display: flex; gap: 0.75rem; flex-wrap: wrap; }
-
-/* ═══════════════════════════════════════════
-   FOOTER
-   ═══════════════════════════════════════════ */
-.footer {
-  display: flex;
-  align-items: center;
-  gap: 0.625rem;
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
-}
-.footer-heart { color: #36383a; font-size: 1.125rem; }
-.footer p {
-  margin: 0;
-  font-family: var(--font-jetbrains);
-  font-size: 0.625rem;
-  line-height: 1.125rem;
-  color: hsl(var(--muted-foreground));
-}
-.footer p span { color: #aaa; }
-
-/* ═══════════════════════════════════════════
-   DOCK NAVIGATION — exact from gurbinder.dev
-   ═══════════════════════════════════════════ */
-.dock {
-=======
 
 .project-card {
   display: block;
@@ -1299,12 +754,6 @@ h1 {
   display: flex;
   align-items: flex-end;
   padding: 0.75rem;
-  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
-}
-
-.project-card:hover .project-preview {
-  transform: scale(1.01);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
 }
 
 .project-meta {
@@ -1315,11 +764,6 @@ h1 {
   font-family: var(--font-jetbrains);
   font-size: 0.5rem;
   color: hsl(var(--muted-foreground) / 0.6);
-  transition: color 0.2s;
-}
-
-.project-card:hover .project-meta {
-  color: hsl(var(--muted-foreground) / 0.8);
 }
 
 .project-icon {
@@ -1327,11 +771,6 @@ h1 {
   border-radius: 2px;
   background: hsl(var(--muted-foreground) / 0.1);
   color: hsl(var(--muted-foreground) / 0.8);
-  transition: background-color 0.2s, color 0.2s;
-}
-
-.project-card:hover .project-icon {
-  background: hsl(var(--muted-foreground) / 0.2);
 }
 
 .project-lang {
@@ -1349,13 +788,11 @@ h1 {
   font-size: 0.875rem;
   font-weight: 600;
   color: #fff;
-  transition: color 0.2s, transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
-  display: inline-block;
+  transition: color 0.2s;
 }
 
 .project-card:hover .project-name {
   color: hsl(var(--accent));
-  transform: translateX(2px);
 }
 
 .project-desc {
@@ -1400,17 +837,11 @@ h1 {
   gap: 0.875rem;
   padding: 1rem 0;
   border-top: 1px solid hsl(var(--border));
-  transition: background-color 0.2s, border-color 0.2s;
 }
 
 .publication-entry:first-of-type {
   border-top: none;
   padding-top: 0;
-}
-
-.publication-entry:hover {
-  background: hsl(var(--card) / 0.5);
-  border-top-color: hsl(var(--border) / 0.8);
 }
 
 .publication-icon {
@@ -1423,22 +854,12 @@ h1 {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  transition: transform 0.3s, background-color 0.2s, border-color 0.2s;
-}
-
-.publication-entry:hover .publication-icon {
-  transform: scale(1.1);
 }
 
 .publication-icon svg {
   width: 14px;
   height: 14px;
   color: hsl(var(--muted-foreground));
-  transition: color 0.2s;
-}
-
-.publication-entry:hover .publication-icon svg {
-  color: #fff;
 }
 
 .publication-content {
@@ -1451,13 +872,11 @@ h1 {
   font-size: 0.875rem;
   font-weight: 600;
   color: #fff;
-  transition: color 0.2s, transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
-  display: inline-block;
+  transition: color 0.2s;
 }
 
 .publication-entry:hover .publication-title {
   color: hsl(var(--accent));
-  transform: translateX(2px);
 }
 
 .publication-desc {
@@ -1484,7 +903,6 @@ h1 {
    DOCK NAVIGATION (gurbinder.dev style)
    ═══════════════════════════════════════════ */
 .dock-bottom {
->>>>>>> 1297db1 (Initial: gurbinder.dev-style portfolio for Rakheeb (algo trader))
   position: fixed;
   bottom: 1rem;
   left: 50%;
@@ -1492,10 +910,7 @@ h1 {
   height: fit-content;
   transform: translateX(-50%);
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> 1297db1 (Initial: gurbinder.dev-style portfolio for Rakheeb (algo trader))
 .dock-inner {
   display: flex;
   flex-direction: row;
@@ -1504,18 +919,11 @@ h1 {
   border-radius: 9999px;
   border: 1px solid hsl(var(--border) / 0.5);
   background: rgba(26, 27, 28, 0.6);
-<<<<<<< HEAD
-  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-}
-=======
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
 
->>>>>>> 1297db1 (Initial: gurbinder.dev-style portfolio for Rakheeb (algo trader))
 .dock-item {
   display: flex;
   flex-direction: column;
@@ -1523,10 +931,7 @@ h1 {
   justify-content: center;
   transition: all 0.2s;
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> 1297db1 (Initial: gurbinder.dev-style portfolio for Rakheeb (algo trader))
 .dock-item svg {
   width: 18px;
   height: 18px;
@@ -1537,34 +942,22 @@ h1 {
   stroke-linecap: round;
   stroke-linejoin: round;
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> 1297db1 (Initial: gurbinder.dev-style portfolio for Rakheeb (algo trader))
 .dock-item span {
   font-family: var(--font-figtree);
   font-size: 0.625rem;
   font-weight: 500;
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> 1297db1 (Initial: gurbinder.dev-style portfolio for Rakheeb (algo trader))
 .dock-item.active {
   color: hsl(var(--primary));
   transform: scale(1.1);
 }
-<<<<<<< HEAD
-.dock-item:not(.active) {
-  color: hsl(var(--muted-foreground));
-}
-=======
 
 .dock-item:not(.active) {
   color: hsl(var(--muted-foreground));
 }
 
->>>>>>> 1297db1 (Initial: gurbinder.dev-style portfolio for Rakheeb (algo trader))
 .dock-item:not(.active):hover {
   color: hsl(var(--primary) / 0.8);
 }
@@ -1577,25 +970,17 @@ h1 {
   width: 300px;
   height: 300px;
   border-radius: 50%;
-<<<<<<< HEAD
-  background: radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 70%);
-=======
   background: radial-gradient(circle, rgba(255, 255, 255, 0.04) 0%, transparent 70%);
->>>>>>> 1297db1 (Initial: gurbinder.dev-style portfolio for Rakheeb (algo trader))
   pointer-events: none;
   transform: translate(-50%, -50%);
   opacity: 0;
   transition: opacity 0.3s;
   z-index: 0;
 }
-<<<<<<< HEAD
-.hero-section-wrap:hover .cursor-glow { opacity: 1; }
-=======
 
 .hero-section-wrap:hover .cursor-glow {
   opacity: 1;
 }
->>>>>>> 1297db1 (Initial: gurbinder.dev-style portfolio for Rakheeb (algo trader))
 
 /* ═══════════════════════════════════════════
    STAGGER REVEAL
@@ -1605,59 +990,29 @@ h1 {
   transform: translateY(12px);
   transition: opacity 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> 1297db1 (Initial: gurbinder.dev-style portfolio for Rakheeb (algo trader))
 .stagger-reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> 1297db1 (Initial: gurbinder.dev-style portfolio for Rakheeb (algo trader))
 .reveal {
   opacity: 0;
   transform: translateY(10px);
   animation: reveal 0.6s both cubic-bezier(0.2, 0.8, 0.2, 1);
 }
-<<<<<<< HEAD
-@keyframes reveal {
-  to { opacity: 1; transform: none; }
-=======
 
 @keyframes reveal {
   to {
     opacity: 1;
     transform: none;
   }
->>>>>>> 1297db1 (Initial: gurbinder.dev-style portfolio for Rakheeb (algo trader))
 }
 
 /* ═══════════════════════════════════════════
    RESPONSIVE
    ═══════════════════════════════════════════ */
 @media (min-width: 640px) {
-<<<<<<< HEAD
-  .dock { bottom: 2rem; }
-}
-
-@media (max-width: 700px) {
-  .page { padding-top: 3.5rem; }
-  .trading-map { display: none; }
-  .month-labels { font-size: 0.4375rem; }
-  .project-grid { gap: 0.875rem; }
-}
-
-@media (max-width: 560px) {
-  .page { padding: 2.5rem 1rem 10rem; }
-  .intro-text br { display: none; }
-  .about-text { max-width: 100%; }
-  .contribution-section { margin-top: 0; }
-  .month-labels { grid-template-columns: repeat(8, 1fr); font-size: 0.4375rem; }
-  .month-labels span:nth-child(n+9) { display: none; }
-=======
   .dock-bottom {
     bottom: 2rem;
   }
@@ -1665,7 +1020,7 @@ h1 {
 
 @media (max-width: 700px) {
   .page {
-    padding-top: 4rem;
+    padding-top: 3.5rem;
   }
 
   .trading-map {
@@ -1679,15 +1034,11 @@ h1 {
   .project-grid {
     gap: 0.875rem;
   }
-
-  .setup-grid {
-    gap: 1rem;
-  }
 }
 
 @media (max-width: 560px) {
   .page {
-    padding: 3.5rem 1rem 10rem;
+    padding: 2.5rem 1rem 10rem;
   }
 
   .contribution-section {
@@ -1703,7 +1054,6 @@ h1 {
     display: none;
   }
 
->>>>>>> 1297db1 (Initial: gurbinder.dev-style portfolio for Rakheeb (algo trader))
   .calendar {
     width: 100%;
     grid-template-rows: repeat(7, 1fr);
@@ -1711,23 +1061,6 @@ h1 {
     gap: 1px;
     aspect-ratio: 53 / 7;
   }
-<<<<<<< HEAD
-  .day { width: 100%; height: auto; aspect-ratio: 1; }
-  .project-grid { grid-template-columns: 1fr; }
-  .project-wide { grid-column: auto; }
-  .project-preview { height: 9.375rem; min-height: 9.375rem; }
-  .dock { bottom: 1rem; }
-  .dock-inner { width: min(290px, calc(100vw - 2rem)); padding-inline: 1.25rem; gap: 1.75rem; }
-}
-
-@media (max-width: 340px) {
-  .dock-inner { padding-inline: 0.9375rem; }
-  .dock-item span { font-size: 0.5625rem; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-=======
 
   .day {
     width: 100%;
@@ -1757,15 +1090,6 @@ h1 {
     padding-inline: 1.25rem;
     gap: 1.75rem;
   }
-
-  .setup-grid {
-    flex-wrap: wrap;
-    gap: 0.75rem;
-  }
-
-  .setup-stat {
-    min-width: 50px;
-  }
 }
 
 @media (max-width: 340px) {
@@ -1783,30 +1107,17 @@ h1 {
     scroll-behavior: auto;
   }
 
->>>>>>> 1297db1 (Initial: gurbinder.dev-style portfolio for Rakheeb (algo trader))
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-<<<<<<< HEAD
-  .reveal, .stagger-reveal {
-=======
 
   .reveal,
   .stagger-reveal {
->>>>>>> 1297db1 (Initial: gurbinder.dev-style portfolio for Rakheeb (algo trader))
     opacity: 1;
     transform: none;
     animation: none;
     transition: none;
   }
-<<<<<<< HEAD
-=======
-
-  .stat-value.live,
-  .status-dot.live {
-    animation: none;
-  }
->>>>>>> 1297db1 (Initial: gurbinder.dev-style portfolio for Rakheeb (algo trader))
 }

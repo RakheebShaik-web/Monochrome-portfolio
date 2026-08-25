@@ -1,10 +1,10 @@
-# Rakheeb Shaikh — Portfolio
+# Rakheeb Portfolio
 
-A lightweight, monochrome personal portfolio for Rakheeb Shaikh, algorithmic trader and quant developer.
+A monochrome personal portfolio for Rakheeb Shaikh, algorithmic trader and quant developer.
 
 ## Local preview
 
-No dependencies or build step are required. Serve the directory with any static server:
+Serve with a static server:
 
 ```bash
 python -m http.server 4173
@@ -12,4 +12,6 @@ python -m http.server 4173
 
 Then open `http://localhost:4173`.
 
-The GitHub contribution calendar loads public activity from `github-contributions-api.jogruber.de` and falls back gracefully when unavailable. Production builds are written to `public/` for Vercel.
+## Deploy
+
+Push to GitHub and connect to Vercel, or deploy to any static host.
