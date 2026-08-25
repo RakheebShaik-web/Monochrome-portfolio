@@ -55,16 +55,23 @@ fetch('https://github-contributions-api.jogruber.de/v4/RakheebShaik-web?y=last')
     animateNumber(total, 999);
   });
 
-// System map animation
-const map = document.querySelector('.system-map');
-if (map) {
-  map.addEventListener('click', () => {
-    if (reduceMotion) return;
-    map.classList.remove('is-running');
-    void map.offsetWidth;
-    map.classList.add('is-running');
-    setTimeout(() => map.classList.remove('is-running'), 1300);
-  });
+// Trading map subtle entrance animation
+if (!reduceMotion) {
+  const tradingMap = document.querySelector('.trading-map');
+  if (tradingMap) {
+    const nodes = tradingMap.querySelectorAll('.map-node');
+    nodes.forEach((node, i) => {
+      node.style.opacity = '0';
+      node.style.transform = 'translateY(6px)';
+      node.style.transition = `opacity 0.5s ${i * 100}ms, transform 0.5s ${i * 100}ms cubic-bezier(0.2,0.8,0.2,1)`;
+    });
+    setTimeout(() => {
+      nodes.forEach(node => {
+        node.style.opacity = '1';
+        node.style.transform = 'translateY(0)';
+      });
+    }, 300);
+  }
 }
 
 // Cursor glow tracking

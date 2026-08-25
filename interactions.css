@@ -53,18 +53,16 @@
   transition: color 0.2s, background-color 0.2s, border-color 0.2s, transform 0.25s cubic-bezier(0.2,0.8,0.2,1), box-shadow 0.25s, filter 0.2s, opacity 0.2s;
 }
 
-/* ── System map hover ── */
-.system-map:hover .node {
-  border-color: #444;
-  color: #aaa;
+/* ── Trading map hover ── */
+.trading-map .node-box {
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
-.system-map.is-running .n1 { animation: nodePulse 0.8s; }
-.system-map.is-running .n2 { animation: nodePulse 0.8s 0.12s; }
-.system-map.is-running .n3 { animation: nodePulse 0.8s 0.24s; }
-.system-map.is-running .n4 { animation: nodePulse 0.8s 0.36s; }
-
-@keyframes nodePulse {
-  50% { background: #e8e8e8; color: #111; transform: scale(1.08); }
+.trading-map:hover .node-box {
+  border-color: #444;
+  box-shadow: 0 4px 16px #000, 0 0 8px rgba(255,255,255,0.03);
+}
+.trading-map:hover .node-label {
+  color: #888;
 }
 
 /* ── Reveal animation ── */
