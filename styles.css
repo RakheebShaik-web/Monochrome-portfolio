@@ -44,7 +44,6 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   min-height: 100vh;
   margin: 0 auto;
   padding: 80px 24px 160px;
-  overflow: hidden;
 }
 .page-col {
   display: flex;
@@ -192,6 +191,7 @@ h1 {
 /* ── Trading Workflow Map ── */
 .hero-section-wrap {
   position: relative;
+  overflow: hidden;
 }
 .trading-map {
   position: absolute;
@@ -203,6 +203,7 @@ h1 {
   pointer-events: none;
   opacity: 0.7;
   transform-origin: right center;
+  max-width: 260px;
 }
 .map-row {
   display: flex;
