@@ -195,13 +195,14 @@ h1 {
 }
 .trading-map {
   position: absolute;
-  right: -10px;
+  right: 0;
   top: 80px;
   display: flex;
   flex-direction: column;
   gap: 0;
   pointer-events: none;
   opacity: 0.7;
+  transform-origin: right center;
 }
 .map-row {
   display: flex;
@@ -215,8 +216,8 @@ h1 {
   gap: 4px;
 }
 .node-box {
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   border: 1px solid #2a2b2c;
   border-radius: 10px;
   background: #141516;
@@ -244,16 +245,16 @@ h1 {
   flex-shrink: 0;
 }
 .wire-h {
-  width: 24px;
+  width: 18px;
   height: 1px;
   border-top: 1px dashed #2a2b2c;
 }
 .wire-v-right {
   width: 1px;
-  height: 16px;
+  height: 14px;
   border-left: 1px dashed #2a2b2c;
   margin-left: auto;
-  margin-right: 22px;
+  margin-right: 56px;
 }
 @media (max-width: 700px) {
   .trading-map { display: none; }
