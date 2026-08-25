@@ -109,11 +109,20 @@ if (!reduceMotion && 'IntersectionObserver' in window) {
     });
   }, { threshold: 0.15 });
 
-  // Apply stagger delay to timeline items
-  document.querySelectorAll('.timeline-item').forEach((item, i) => {
+  // Apply stagger delay to work entries
+  document.querySelectorAll('.work-entry').forEach((item, i) => {
     item.classList.add('stagger-reveal');
-    item.style.transitionDelay = `${i * 100}ms`;
+    item.style.transitionDelay = `${(i + 1) * 100}ms`;
     revealObserver.observe(item);
+  });
+
+  // Apply stagger to section containers
+  ['.work-section', '.location-section', '.skills-section', '.projects-section', '.social-section'].forEach(sel => {
+    const el = document.querySelector(sel);
+    if (el) {
+      el.classList.add('stagger-reveal');
+      revealObserver.observe(el);
+    }
   });
 
   // Apply stagger delay to project cards
@@ -124,7 +133,7 @@ if (!reduceMotion && 'IntersectionObserver' in window) {
   });
 
   // Apply stagger delay to skill tags
-  document.querySelectorAll('.skill-list span').forEach((tag, i) => {
+  document.querySelectorAll('.skill-tags span').forEach((tag, i) => {
     tag.classList.add('stagger-reveal');
     tag.style.transitionDelay = `${i * 40}ms`;
     revealObserver.observe(tag);
@@ -135,6 +144,13 @@ if (!reduceMotion && 'IntersectionObserver' in window) {
     btn.classList.add('stagger-reveal');
     btn.style.transitionDelay = `${i * 80}ms`;
     revealObserver.observe(btn);
+  });
+
+  // Apply stagger delay to skill categories
+  document.querySelectorAll('.skill-category').forEach((cat, i) => {
+    cat.classList.add('stagger-reveal');
+    cat.style.transitionDelay = `${i * 100}ms`;
+    revealObserver.observe(cat);
   });
 
   // Reveal hero elements immediately with stagger
