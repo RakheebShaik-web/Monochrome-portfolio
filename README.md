@@ -12,4 +12,4 @@ python -m http.server 4173
 
 Then open `http://localhost:4173`.
 
-The GitHub contribution calendar loads public activity from `github-contributions-api.jogruber.de` and falls back gracefully when unavailable.
+The GitHub contribution calendar loads public activity from `github-contributions-api.jogruber.de` and falls back gracefully when unavailable. Production builds are written to `public/` for Vercel.
