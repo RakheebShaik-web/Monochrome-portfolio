@@ -1,15 +1,31 @@
-# Rakheeb Shaikh — Portfolio
+# Rakheeb Shaikh — Monochrome Portfolio
 
-A lightweight, monochrome personal portfolio for Rakheeb Shaikh, algorithmic trader and quant developer.
+A compact, multi-page portfolio for Rakheeb Shaikh, Algorithmic Trader and Quant Developer at Shah Equity.
+
+## Pages
+
+- `/` — introduction, GitHub activity, timeline, trading systems, and contact links
+- `/work/` — experience and operating evidence
+- `/skills/` — categorized trading, research, data, and infrastructure toolkit
 
 ## Local preview
 
-No dependencies or build step are required. Serve the directory with any static server:
-
 ```bash
-python -m http.server 4173
+npm run dev
 ```
 
-Then open `http://localhost:4173`.
+Open [http://localhost:4173](http://localhost:4173).
 
-The GitHub contribution calendar loads public activity from `github-contributions-api.jogruber.de` and falls back gracefully when unavailable. Production builds are written to `public/` for Vercel.
+## Production build
+
+```bash
+npm run build
+```
+
+The dependency-free build copies the static site into `public/`. Vercel publishes that directory using `vercel.json`.
+
+The GitHub calendar loads Rakheeb's public activity from `github-contributions-api.jogruber.de` and falls back to an empty calendar if that service is unavailable.
+
+## Deployment safety
+
+This repository is independent from the separate orange portfolio at `rakheeb.vercel.app`. Never link this Vercel project to that repository or deployment.
