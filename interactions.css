@@ -55,14 +55,17 @@
 
 /* ── Trading map hover ── */
 .trading-map .node-box {
-  transition: border-color 0.3s, box-shadow 0.3s;
+  transition: border-color 0.3s, box-shadow 0.3s, background 0.3s;
 }
 .trading-map:hover .node-box {
   border-color: #444;
-  box-shadow: 0 4px 16px #000, 0 0 8px rgba(255,255,255,0.03);
+  box-shadow: 0 4px 20px #000, 0 0 12px rgba(255,255,255,0.03);
 }
 .trading-map:hover .node-label {
-  color: #888;
+  color: #999;
+}
+.trading-map:hover .node-dashed {
+  border-color: #333;
 }
 
 /* ── Reveal animation ── */
