@@ -1,1 +1,86 @@
-const calendar=document.querySelector('#contribution-calendar'),total=document.querySelector('#contribution-total');const level=n=>n===0?0:n<3?1:n<6?2:n<10?3:4;function draw(days){const f=document.createDocumentFragment();days.forEach(d=>{const x=document.createElement('span');x.className='day';x.dataset.level=Number.isFinite(d.level)?d.level:level(d.count);x.title=`${d.count} contribution${d.count===1?'':'s'} on ${d.date}`;f.append(x)});calendar.replaceChildren(f);calendar.setAttribute('aria-label',`GitHub contribution calendar showing ${days.length} days`)}function fallback(){const now=new Date();draw(Array.from({length:371},(_,i)=>{const d=new Date(now);d.setDate(d.getDate()-(370-i));return{date:d.toISOString().slice(0,10),count:0,level:0}}))}fetch('https://github-contributions-api.jogruber.de/v4/RakheebShaik-web?y=last').then(r=>{if(!r.ok)throw Error();return r.json()}).then(d=>{if(!d.contributions?.length)throw Error();draw(d.contributions);total.textContent=d.contributions.reduce((s,x)=>s+x.count,0).toLocaleString()}).catch(fallback);document.querySelector('#year').textContent=new Date().getFullYear();const links=[...document.querySelectorAll('.dock-item')],sections=links.map(a=>document.querySelector(a.hash)).filter(Boolean);if('IntersectionObserver'in window){const observer=new IntersectionObserver(entries=>{const hit=entries.find(e=>e.isIntersecting);if(!hit)return;links.forEach(a=>a.classList.toggle('active',a.hash===`#${hit.target.id}`))},{rootMargin:'-35% 0px -55%'});sections.forEach(s=>observer.observe(s))}
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const calendar = document.querySelector('#contribution-calendar');
+const total = document.querySelector('#contribution-total');
+const level = count => count === 0 ? 0 : count < 3 ? 1 : count < 6 ? 2 : count < 10 ? 3 : 4;
+
+function renderCalendar(days) {
+  const fragment = document.createDocumentFragment();
+  days.forEach(data => {
+    const day = document.createElement('span');
+    day.className = 'day';
+    day.dataset.level = Number.isFinite(data.level) ? data.level : level(data.count);
+    day.title = `${data.count} contribution${data.count === 1 ? '' : 's'} on ${data.date}`;
+    fragment.append(day);
+  });
+  calendar.replaceChildren(fragment);
+  calendar.setAttribute('aria-label', `GitHub contribution calendar showing ${days.length} days`);
+}
+
+function fallback() {
+  const now = new Date();
+  renderCalendar(Array.from({ length: 371 }, (_, index) => {
+    const date = new Date(now);
+    date.setDate(date.getDate() - (370 - index));
+    return { date: date.toISOString().slice(0, 10), count: 0, level: 0 };
+  }));
+}
+
+fetch('https://github-contributions-api.jogruber.de/v4/RakheebShaik-web?y=last')
+  .then(response => { if (!response.ok) throw new Error(); return response.json(); })
+  .then(data => {
+    if (!data.contributions?.length) throw new Error();
+    renderCalendar(data.contributions);
+    total.textContent = data.contributions.reduce((sum, day) => sum + day.count, 0).toLocaleString();
+  })
+  .catch(fallback);
+
+// System map animation
+const map = document.querySelector('.system-map');
+if (map) {
+  map.addEventListener('click', () => {
+    if (reduceMotion) return;
+    map.classList.remove('is-running');
+    void map.offsetWidth;
+    map.classList.add('is-running');
+    setTimeout(() => map.classList.remove('is-running'), 1300);
+  });
+}
+
+// Active section observer for dock navigation
+const links = [...document.querySelectorAll('.dock-item')];
+const sections = links.map(link => document.querySelector(link.hash)).filter(Boolean);
+if ('IntersectionObserver' in window) {
+  const navObserver = new IntersectionObserver(entries => {
+    const active = entries.find(entry => entry.isIntersecting);
+    if (!active) return;
+    links.forEach(link => {
+      const selected = link.hash === `#${active.target.id}`;
+      link.classList.toggle('active', selected);
+      if (selected) link.setAttribute('aria-current', 'page');
+      else link.removeAttribute('aria-current');
+    });
+  }, { rootMargin: '-35% 0px -55%' });
+  sections.forEach(section => navObserver.observe(section));
+}
+
+// Reveal animations
+if (!reduceMotion) {
+  const revealTargets = [
+    ...document.querySelectorAll('#hero-section > *'),
+    '.contribution-section',
+    '.timeline-wrapper',
+    '.social-section',
+    '.projects-section',
+    '.skills-section'
+  ];
+  revealTargets.forEach((selector, index) => {
+    const el = typeof selector === 'string' ? document.querySelector(selector) : selector;
+    if (el) {
+      el.classList.add('reveal');
+      el.style.animationDelay = `${index * 60}ms`;
+    }
+  });
+}
+
+// Update year
+document.querySelector('#year').textContent = new Date().getFullYear();

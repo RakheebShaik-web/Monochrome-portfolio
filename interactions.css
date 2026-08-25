@@ -1,0 +1,111 @@
+/* ── Button shine sweep ── */
+.button { position: relative; overflow: hidden; }
+.button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 20%, #ffffff12 50%, transparent 80%);
+  transform: translateX(-140%);
+  transition: transform 0.55s;
+}
+.button:hover::after {
+  transform: translateX(140%);
+}
+
+/* ── Dock hover ── */
+.dock-inner {
+  transition: border-color 0.2s, background 0.2s, box-shadow 0.25s;
+}
+.dock:hover .dock-inner {
+  border-color: #444;
+  background: #1a1b1ce8;
+  box-shadow: 0 15px 42px #000c;
+}
+.dock-item:hover,
+.dock-item.active {
+  color: #fff;
+  transform: scale(1.1);
+}
+.dock-item:active {
+  transform: scale(0.96);
+}
+
+/* ── Calendar day hover ── */
+.day:hover {
+  filter: brightness(1.7);
+  transform: scale(1.55);
+  z-index: 2;
+}
+
+/* ── Contribution section hover ── */
+.contribution-section:hover > p {
+  color: #aaa;
+}
+
+/* ── Timeline hover ── */
+.timeline-item:hover {
+  transform: translateY(-2px);
+}
+.timeline-item:hover .timeline-dot {
+  border-color: #777;
+}
+
+/* ── Project card hover ── */
+.project-card:hover .project-info span:first-child {
+  transform: translateX(2px);
+}
+.project-card:hover .project-desc {
+  color: #999;
+}
+
+/* ── Skill tag hover ── */
+.skill-list span {
+  transition: color 0.2s, background-color 0.2s, border-color 0.2s, transform 0.25s cubic-bezier(0.2,0.8,0.2,1), box-shadow 0.25s, filter 0.2s, opacity 0.2s;
+}
+
+/* ── System map hover ── */
+.system-map:hover .node {
+  border-color: #444;
+  color: #aaa;
+}
+.system-map.is-running .n1 { animation: nodePulse 0.8s; }
+.system-map.is-running .n2 { animation: nodePulse 0.8s 0.12s; }
+.system-map.is-running .n3 { animation: nodePulse 0.8s 0.24s; }
+.system-map.is-running .n4 { animation: nodePulse 0.8s 0.36s; }
+
+@keyframes nodePulse {
+  50% { background: #e8e8e8; color: #111; transform: scale(1.08); }
+}
+
+/* ── Reveal animation ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(8px);
+  animation: reveal 0.55s both cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+@keyframes reveal {
+  to { opacity: 1; transform: none; }
+}
+
+/* ── Touch device overrides ── */
+@media (hover: none) {
+  .dock-item:hover { transform: none; }
+  .day:hover { transform: none; }
+  .button:active,
+  .project-card:active .project-border,
+  .skill-list span:active {
+    filter: brightness(1.3);
+  }
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+  .system-map.is-running .node {
+    animation: none;
+  }
+}
