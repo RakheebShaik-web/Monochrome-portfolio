@@ -34,34 +34,36 @@ fetch('https://github-contributions-api.jogruber.de/v4/RakheebShaik-web?y=last')
   })
   .catch(fallback);
 
-const map = document.querySelector('.system-map');
-map.addEventListener('click', () => {
-  if (reduceMotion) return;
-  map.classList.remove('is-running');
-  void map.offsetWidth;
-  map.classList.add('is-running');
-  setTimeout(() => map.classList.remove('is-running'), 1300);
-});
-
 const links = [...document.querySelectorAll('.dock-item')];
-const sections = links.map(link => document.querySelector(link.hash)).filter(Boolean);
+const sections = links.map(link => {
+  const href = link.getAttribute('href');
+  if (href.startsWith('#')) return document.querySelector(href);
+  return null;
+}).filter(Boolean);
+
 if ('IntersectionObserver' in window) {
   const navObserver = new IntersectionObserver(entries => {
     const active = entries.find(entry => entry.isIntersecting);
     if (!active) return;
     links.forEach(link => {
-      const selected = link.hash === `#${active.target.id}`;
+      const selected = link.getAttribute('href') === `#${active.target.id}`;
       link.classList.toggle('active', selected);
-      if (selected) link.setAttribute('aria-current', 'page'); else link.removeAttribute('aria-current');
+      if (selected) link.setAttribute('aria-current', 'page');
+      else link.removeAttribute('aria-current');
     });
   }, { rootMargin: '-35% 0px -55%' });
   sections.forEach(section => navObserver.observe(section));
 }
 
 if (!reduceMotion) {
-  [...document.querySelectorAll('.hero > *, .contribution-section, .timeline')].forEach((element, index) => {
-    element.classList.add('reveal');
-    element.style.animationDelay = `${index * 60}ms`;
+  [...document.querySelectorAll('#hero-section > *, .contribution-section, .work-section, .social-block, .projects, footer')].forEach((element, index) => {
+    element.style.opacity = '0';
+    element.style.transform = 'translateY(8px)';
+    element.style.transition = `opacity 0.5s ${index * 60}ms, transform 0.5s ${index * 60}ms cubic-bezier(0.2,0.8,0.2,1)`;
+    setTimeout(() => {
+      element.style.opacity = '1';
+      element.style.transform = 'translateY(0)';
+    }, 100);
   });
 }
 
