@@ -79,7 +79,6 @@ img, svg {
    HERO SECTION
    ═══════════════════════════════════════════ */
 #hero-section {
-  min-height: 60vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
