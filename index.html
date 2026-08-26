@@ -67,6 +67,15 @@
         </div>
         <div class="system-map" aria-label="Research-to-execution system map">
           <div class="map-container">
+            <svg class="trade-flow" viewBox="0 0 668 220" preserveAspectRatio="none" aria-hidden="true">
+              <defs><filter id="flow-glow"><feGaussianBlur stdDeviation="2.4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+              <path class="flow-path flow-path-top" d="M426 28 H644 V196"/>
+              <path class="flow-path flow-path-main" d="M34 196 H644"/>
+              <polyline class="market-trace" points="34,116 76,110 112,128 151,91 190,104 229,76 270,88 312,61 353,79 395,52 437,67 478,43 520,61 562,34 606,49 644,25"/>
+              <circle class="flow-packet packet-top" r="3" filter="url(#flow-glow)"><animateMotion dur="4.8s" repeatCount="indefinite" path="M426 28 H644 V196"/></circle>
+              <circle class="flow-packet packet-main" r="3" filter="url(#flow-glow)"><animateMotion dur="6.4s" repeatCount="indefinite" path="M34 196 H644"/></circle>
+              <circle class="flow-packet packet-main packet-late" r="2.2" filter="url(#flow-glow)"><animateMotion dur="6.4s" begin="-3.2s" repeatCount="indefinite" path="M34 196 H644"/></circle>
+            </svg>
             <div class="node n-canvas"><svg viewBox="0 0 20 20" width="16" height="16"><path d="M4 4h12v12H4z" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></div>
             <div class="node n-concept"><svg viewBox="0 0 20 20" width="16" height="16"><path d="M10 3l2.5 5 5.5.8-4 3.9.9 5.5L10 15.6 5.1 18.2 6 12.7 2 8.8l5.5-.8z" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></div>
             <div class="node n-draft"><svg viewBox="0 0 20 20" width="16" height="16"><circle cx="10" cy="10" r="3" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="10" cy="10" r="6" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5"/></svg></div>
@@ -165,7 +174,7 @@
             <p>still not sure? Check out my Projects</p>
             <div class="project-grid">
               <a class="project-card" href="https://github.com/RakheebShaik-web/alpaca.bot-eod-dashboard" target="_blank" rel="noopener">
-                <div class="project-image"><img src="/assets/reference/invoicely.png" alt="U.S. Stock Bot dashboard preview"></div>
+                <div class="project-image"><img src="/assets/projects/us-stock-bot-dashboard.png" alt="U.S. Stock Bot trading operations dashboard"></div>
                 <div class="project-info">
                   <h2>U.S. Stock Bot</h2>
                   <p>LIVE</p>
@@ -173,7 +182,7 @@
                 </div>
               </a>
               <a class="project-card" href="https://github.com/RakheebShaik-web/stocks-options-strategy" target="_blank" rel="noopener">
-                <div class="project-image"><img src="/assets/reference/evilcharts.png" alt="NSE Options System dashboard preview"></div>
+                <div class="project-image"><img src="/assets/projects/nse-options-dashboard.png" alt="NSE Options System quantitative research dashboard"></div>
                 <div class="project-info">
                   <h2>NSE Options System</h2>
                   <p>R&amp;D</p>

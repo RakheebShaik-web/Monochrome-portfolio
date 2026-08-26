@@ -631,3 +631,4 @@ footer p span {
   footer{height:120px}
 }
 @media(prefers-reduced-motion:reduce){.project-image img,.project-image:after,.map-container .node{animation:none!important}}
+.trade-flow{position:absolute;inset:0;z-index:0;width:100%;height:100%;overflow:visible}.flow-path{fill:none;stroke:#3b3d3e;stroke-width:1;stroke-dasharray:3 5}.flow-path-top{opacity:.52}.flow-path-main{opacity:.7}.market-trace{fill:none;stroke:#626465;stroke-width:1;opacity:.2;stroke-dasharray:180 520;animation:traceDraw 7s linear infinite}.flow-packet{fill:#e7e7e7;opacity:.9}.packet-top{fill:#75d997}.packet-late{opacity:.45}.map-container:before,.map-container:after{display:none}.map-container .node{z-index:2}@keyframes traceDraw{to{stroke-dashoffset:-700}}@media(prefers-reduced-motion:reduce){.market-trace{animation:none}.flow-packet{display:none}}
