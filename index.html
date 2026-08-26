@@ -21,6 +21,7 @@
             'muted-foreground': 'hsl(240, 0%, 55%)',
             border: 'hsl(240, 3.7%, 15.9%)',
             accent: 'hsl(240, 3.7%, 15.9%)',
+            primary: 'hsl(0, 0%, 98%)',
           },
           fontFamily: {
             figtree: ['Figtree', 'sans-serif'],
@@ -76,71 +77,96 @@
         </div>
       </div>
 
-      <a class="contribution-section" href="https://github.com/RakheebShaik-web" target="_blank" rel="noopener">
-        <div class="month-labels">
-          <span>Aug</span><span>Jul</span><span>Jun</span><span>May</span><span>Apr</span><span>Mar</span><span>Feb</span><span>Jan</span><span>Dec</span><span>Nov</span><span>Oct</span><span>Sep</span>
-        </div>
-        <div class="calendar-clip"><div class="calendar" id="contribution-calendar"></div></div>
-        <p><strong id="contribution-total">—</strong> GitHub contributions in the last year</p>
-      </a>
-
-      <section class="work-section">
-        <div class="work-grid">
-          <div class="work-item">
-            <div class="work-icon active">SE</div>
-            <div class="work-info">
-              <h2>Shah Equity</h2>
-              <p>Jul/25 – Now · Algorithmic Trader</p>
+      <div id="main-section">
+        <div class="box">
+          <a class="contribution-section" href="https://github.com/RakheebShaik-web" target="_blank" rel="noopener">
+            <div class="month-labels">
+              <span>Aug</span><span>Jul</span><span>Jun</span><span>May</span><span>Apr</span><span>Mar</span><span>Feb</span><span>Jan</span><span>Dec</span><span>Nov</span><span>Oct</span><span>Sep</span>
             </div>
-          </div>
-          <div class="work-item">
-            <div class="work-icon">S</div>
-            <div class="work-info">
-              <h2>Systematic Trading</h2>
-              <p>U.S. equities · Indian options</p>
-            </div>
-          </div>
-          <div class="work-item">
-            <div class="work-icon">BT</div>
-            <div class="work-info">
-              <h2>BTech CSE · AI/ML</h2>
-              <p>NRI University · Mar/25</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="social-block">
-        <p>You can check these links if you wish to</p>
-        <div class="social-buttons">
-          <a class="button" href="https://twitter.com/legionsdev" target="_blank" rel="noopener">Twitter</a>
-          <a class="button" href="https://github.com/legions-developer" target="_blank" rel="noopener">Github</a>
-          <a class="button" href="https://www.linkedin.com/in/legionsdev/" target="_blank" rel="noopener">Linkedin</a>
-          <a class="button" href="https://discordapp.com/users/972908003466555413" target="_blank" rel="noopener">Discord</a>
-        </div>
-      </section>
-
-      <section class="projects">
-        <p>still not sure? Check out my Projects</p>
-        <div class="project-grid">
-          <a class="project-card" href="https://invoicely.gg/" target="_blank" rel="noopener">
-            <div class="project-image"><span>Invoicely</span></div>
-            <div class="project-info">
-              <h2>Invoicely</h2>
-              <p>899</p>
-              <p>Invoicely is a simple and easy to use invoice generator ~ Proudly OSS</p>
-            </div>
-          </a>
-          <a class="project-card" href="https://evilcharts.com/" target="_blank" rel="noopener">
-            <div class="project-image"><span>EvilCharts</span></div>
-            <div class="project-info">
-              <h2>EvilCharts</h2>
-              <p>2815</p>
-              <p>Animated & Interactive charts for your next project.</p>
-            </div>
+            <div class="calendar-clip"><div class="calendar" id="contribution-calendar"></div></div>
+            <p><strong id="contribution-total">—</strong> GitHub contributions in the last year</p>
           </a>
         </div>
-      </section>
+
+        <div class="box flex flex-col gap-6">
+          <div class="relative flex pt-6">
+            <div class="absolute left-0 top-0">
+              <div class="relative z-10 ml-2 h-2 w-2 rounded-full bg-brand"></div>
+              <div class="absolute -left-0.5 -top-0.5 z-10 ml-2 h-3 w-3 animate-ping rounded-full bg-brand opacity-50"></div>
+              <div class="absolute -left-1.5 -top-1.5 ml-2 h-5 w-5 rounded-full bg-background"></div>
+            </div>
+            <div class="flex flex-col gap-1.5 sm:flex-row sm:items-center">
+              <div class="flex h-6 w-6 items-center justify-center bg-gradient-to-br from-accent to-transparent text-xs">SE</div>
+              <div class="flex flex-col sm:gap-2">
+                <span class="font-medium text-white">Shah Equity</span>
+                <span class="text-sm text-muted-foreground">Jul/25 – Now · Algorithmic Trader</span>
+              </div>
+            </div>
+          </div>
+          <div class="relative flex pt-6">
+            <div class="absolute left-0 top-0">
+              <div class="relative z-10 ml-2 h-2 w-2 rounded-full bg-border"></div>
+              <div class="absolute -left-1.5 -top-1.5 ml-2 h-5 w-5 rounded-full bg-background"></div>
+            </div>
+            <div class="flex flex-col gap-1.5 sm:flex-row sm:items-center">
+              <div class="flex h-6 w-6 items-center justify-center bg-gradient-to-br from-accent to-transparent text-xs">S</div>
+              <div class="flex flex-col sm:gap-2">
+                <span class="font-medium text-white">Systematic Trading</span>
+                <span class="text-sm text-muted-foreground">U.S. equities · Indian options</span>
+              </div>
+            </div>
+          </div>
+          <div class="relative flex pt-6">
+            <div class="absolute left-0 top-0">
+              <div class="relative z-10 ml-2 h-2 w-2 rounded-full bg-border"></div>
+              <div class="absolute -left-1.5 -top-1.5 ml-2 h-5 w-5 rounded-full bg-background"></div>
+            </div>
+            <div class="flex flex-col gap-1.5 sm:flex-row sm:items-center">
+              <div class="flex h-6 w-6 items-center justify-center bg-gradient-to-br from-accent to-transparent text-xs">BT</div>
+              <div class="flex flex-col sm:gap-2">
+                <span class="font-medium text-white">BTech CSE · AI/ML</span>
+                <span class="text-sm text-muted-foreground">NRI University · Mar/25</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="social-block">
+            <p>You can check these links if you wish to</p>
+            <div class="social-buttons">
+              <a class="button" href="https://twitter.com/legionsdev" target="_blank" rel="noopener">Twitter</a>
+              <a class="button" href="https://github.com/legions-developer" target="_blank" rel="noopener">Github</a>
+              <a class="button" href="https://www.linkedin.com/in/legionsdev/" target="_blank" rel="noopener">Linkedin</a>
+              <a class="button" href="https://discordapp.com/users/972908003466555413" target="_blank" rel="noopener">Discord</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="projects">
+            <p>still not sure? Check out my Projects</p>
+            <div class="project-grid">
+              <a class="project-card" href="https://invoicely.gg/" target="_blank" rel="noopener">
+                <div class="project-image"><span>Invoicely</span></div>
+                <div class="project-info">
+                  <h2>Invoicely</h2>
+                  <p>899</p>
+                  <p>Invoicely is a simple and easy to use invoice generator ~ Proudly OSS</p>
+                </div>
+              </a>
+              <a class="project-card" href="https://evilcharts.com/" target="_blank" rel="noopener">
+                <div class="project-image"><span>EvilCharts</span></div>
+                <div class="project-info">
+                  <h2>EvilCharts</h2>
+                  <p>2815</p>
+                  <p>Animated & Interactive charts for your next project.</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <footer>
         <span class="footer-heart">♥</span>
