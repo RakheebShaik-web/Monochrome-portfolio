@@ -6,7 +6,9 @@ A compact, multi-page portfolio for Rakheeb Shaikh, Algorithmic Trader and Quant
 
 - `/` — introduction, GitHub activity, timeline, trading systems, and contact links
 - `/work/` — experience and operating evidence
+- `/systems/` — live and research trading systems
 - `/skills/` — categorized trading, research, data, and infrastructure toolkit
+- `/contact/` — direct email, LinkedIn, and GitHub links
 
 ## Local preview
 
