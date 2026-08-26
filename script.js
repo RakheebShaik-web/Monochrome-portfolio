@@ -31,6 +31,7 @@ function fallback() {
   }));
 }
 
+fallback();
 fetch('https://github-contributions-api.jogruber.de/v4/RakheebShaik-web?y=last')
   .then(response => { if (!response.ok) throw new Error(); return response.json(); })
   .then(data => {
