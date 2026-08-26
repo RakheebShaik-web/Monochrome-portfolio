@@ -1,78 +1,198 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html class="dark" lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Rakheeb Shaikh — Algorithmic Trader and Quant Developer.">
-  <meta name="theme-color" content="#0b0d0e">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rakheeb | Algorithmic Trader">
   <title>Rakheeb | Algorithmic Trader</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: '#fff',
+            background: 'hsl(200, 10%, 5%)',
+            foreground: 'hsl(0, 0%, 98%)',
+            card: 'hsl(240, 10%, 3.9%)',
+            'card-foreground': 'hsl(0, 0%, 98%)',
+            muted: 'hsl(240, 3.7%, 15.9%)',
+            'muted-foreground': 'hsl(240, 0%, 55%)',
+            border: 'hsl(240, 3.7%, 15.9%)',
+            accent: 'hsl(240, 3.7%, 15.9%)',
+            primary: 'hsl(0, 0%, 98%)',
+            cardColor: '#1a1b1c',
+            cardColorForeground: '#1e1f20',
+          },
+          fontFamily: {
+            figtree: ['Figtree', 'sans-serif'],
+            doto: ['Doto', 'sans-serif'],
+            jetbrains: ['DM Mono', 'monospace'],
+          },
+        },
+      },
+    };
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Doto:wght@700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="interactions.css">
-  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="custom.css">
 </head>
-<body>
-  <a class="skip-link" href="#main">Skip to content</a>
+<body class="bg-background text-foreground font-figtree antialiased">
+  <div class="page">
+    <div>
+      <section id="hero-section" class="page-col mt-10 pb-10">
+        <div>
+          <div class="jetbrains-mono flex items-center gap-1.5 text-xs tracking-tighter text-muted-foreground/60">
+            <span>Hey, it's me</span>
+            <svg height="12" width="12" viewBox="0 0 18 18"><path d="M6.074 10.969L5.549 9.849C5.143 8.981 5.14 7.985 5.539 7.115C5.937 6.246 6.698 5.598 7.624 5.338C7.898 5.261 8.181 5.222 8.465 5.222C9.598 5.222 10.657 5.835 11.271 6.809C11.71 5.99 12.001 5.058 12.001 4.008C12.008 2.085 10.447 0.511 8.508 0.499C7.668 0.51 6.871 0.819 6.251 1.355C5.63 0.819 4.83 0.509 3.98 0.499C2.055 0.511 0.494 2.085 0.501 4.005C0.501 7.879 4.379 10.202 5.567 10.822C5.727 10.905 5.9 10.948 6.074 10.969Z" fill="#737373" opacity="0.6"/><path d="M16.554 10.604C15.565 9.848 13.332 9.682 11.231 10.181L10.12 7.818C9.749 7.029 8.868 6.547 8.029 6.783C6.961 7.083 6.457 8.25 6.907 9.213L9.054 13.789L7.384 13.482C6.655 13.348 5.872 13.631 5.496 14.27C5.197 14.779 5.171 15.373 5.413 15.89C5.608 16.308 5.956 16.624 6.393 16.782L8.502 17.525C9.397 17.84 10.339 18.001 11.288 18.001H13.905C16.54 18.001 17.827 15.642 17.696 13.721C17.585 12.083 17.201 11.1 16.552 10.605L16.554 10.604Z" fill="#737373" opacity="0.3"/></svg>
+          </div>
+          <h1 class="doto-font text-2xl font-bold">
+            <span class="relative"><span>RAKHEEB</span></span>
+            <a class="group" target="_blank" href="https://github.com/RakheebShaik-web">
+              <span class="jetbrains-mono h-fit text-xs font-light tracking-tight text-muted-foreground/60 duration-200 group-hover:text-white"><span>/ </span><span class="text-xxs">@</span><span>RakheebShaik-web</span></span>
+            </a>
+          </h1>
+        </div>
+        <div>
+          <p class="text-sm text-muted-foreground">I’m an <span class="font-medium text-white">Algorithmic Trader</span> at Shah Equity, turning market research into reliable systems.</p>
+          <p class="text-sm text-muted-foreground">I also work as a <span class="font-medium text-white">Quant Developer</span> across U.S. equities and Indian options.</p>
+        </div>
+        <p class="text-sm text-muted-foreground">I care about explicit <span class="font-medium text-white">risk controls</span>, automated execution, monitoring, and reconciliation—the parts that keep a strategy honest after the backtest ends.</p>
+        <div class="mt-5 flex items-center gap-2">
+          <a class="button" href="https://www.linkedin.com/in/rakheeb-shaik-aba0762b5/" target="_blank" rel="noopener">LinkedIn</a>
+          <span class="or">OR</span>
+          <a class="button" href="mailto:shaikrakheeb280@gmail.com">Email Me</a>
+        </div>
+      </section>
+
+      <div class="system-map">
+        <div class="map-container">
+          <div class="node n-canvas"><svg viewBox="0 0 20 20" width="16" height="16"><path d="M4 4h12v12H4z" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></div>
+          <div class="node n-concept"><svg viewBox="0 0 20 20" width="16" height="16"><path d="M10 3l2.5 5 5.5.8-4 3.9.9 5.5L10 15.6 5.1 18.2 6 12.7 2 8.8l5.5-.8z" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></div>
+          <div class="node n-draft"><svg viewBox="0 0 20 20" width="16" height="16"><circle cx="10" cy="10" r="3" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="10" cy="10" r="6" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5"/></svg></div>
+          <div class="node n-style"><svg viewBox="0 0 20 20" width="16" height="16"><path d="M10 3l7 12H3z" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></div>
+          <div class="node n-refine"><svg viewBox="0 0 20 20" width="16" height="16"><path d="M4 10h12M10 4v12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          <div class="node n-deliver node-dashed"><svg viewBox="0 0 20 20" width="16" height="16"><rect x="4" y="4" width="12" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></div>
+        </div>
+      </div>
+
+      <div id="main-section">
+        <div class="box">
+          <div class="contribution-header">
+            <div class="contribution-line"></div>
+            <div class="contribution-ping"></div>
+            <div class="contribution-active-dot"></div>
+            <a class="contribution-section" href="https://github.com/RakheebShaik-web" target="_blank" rel="noopener">
+              <div class="month-labels">
+                <span>Aug</span><span>Jul</span><span>Jun</span><span>May</span><span>Apr</span><span>Mar</span><span>Feb</span><span>Jan</span><span>Dec</span><span>Nov</span><span>Oct</span><span>Sep</span>
+              </div>
+              <div class="calendar-clip"><div class="calendar" id="contribution-calendar"></div></div>
+              <p><strong id="contribution-total">—</strong> GitHub contributions in the last year</p>
+            </a>
+          </div>
+        </div>
+
+        <div class="box flex flex-col gap-6">
+          <div class="relative flex pt-6">
+            <div class="absolute left-0 top-0">
+              <div class="relative z-10 ml-2 h-2 w-2 rounded-full bg-brand"></div>
+              <div class="absolute -left-0.5 -top-0.5 z-10 ml-2 h-3 w-3 animate-ping rounded-full bg-brand opacity-50"></div>
+              <div class="absolute -left-1.5 -top-1.5 ml-2 h-5 w-5 rounded-full bg-background"></div>
+            </div>
+            <div class="flex flex-col gap-1.5 sm:flex-row sm:items-center">
+              <div class="flex h-6 w-6 items-center justify-center bg-gradient-to-br from-accent to-transparent text-xs">SE</div>
+              <div class="flex flex-col sm:gap-2">
+                <span class="font-medium text-white">Shah Equity</span>
+                <span class="text-sm text-muted-foreground">Jul/25 – Now · Algorithmic Trader</span>
+              </div>
+            </div>
+          </div>
+          <div class="relative flex pt-6">
+            <div class="absolute left-0 top-0">
+              <div class="relative z-10 ml-2 h-2 w-2 rounded-full bg-border"></div>
+              <div class="absolute -left-1.5 -top-1.5 ml-2 h-5 w-5 rounded-full bg-background"></div>
+            </div>
+            <div class="flex flex-col gap-1.5 sm:flex-row sm:items-center">
+              <div class="flex h-6 w-6 items-center justify-center bg-gradient-to-br from-accent to-transparent text-xs">S</div>
+              <div class="flex flex-col sm:gap-2">
+                <span class="font-medium text-white">Systematic Trading</span>
+                <span class="text-sm text-muted-foreground">U.S. equities · Indian options</span>
+              </div>
+            </div>
+          </div>
+          <div class="relative flex pt-6">
+            <div class="absolute left-0 top-0">
+              <div class="relative z-10 ml-2 h-2 w-2 rounded-full bg-border"></div>
+              <div class="absolute -left-1.5 -top-1.5 ml-2 h-5 w-5 rounded-full bg-background"></div>
+            </div>
+            <div class="flex flex-col gap-1.5 sm:flex-row sm:items-center">
+              <div class="flex h-6 w-6 items-center justify-center bg-gradient-to-br from-accent to-transparent text-xs">BT</div>
+              <div class="flex flex-col sm:gap-2">
+                <span class="font-medium text-white">BTech CSE · AI/ML</span>
+                <span class="text-sm text-muted-foreground">NRI University · Mar/25</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="social-block">
+            <p>You can check these links if you wish to</p>
+            <div class="social-buttons">
+              <a class="button" href="mailto:shaikrakheeb280@gmail.com">Email</a>
+              <a class="button" href="https://github.com/RakheebShaik-web" target="_blank" rel="noopener">Github</a>
+              <a class="button" href="https://www.linkedin.com/in/rakheeb-shaik-aba0762b5/" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="projects">
+            <p>still not sure? Check out my Projects</p>
+            <div class="project-grid">
+              <a class="project-card" href="https://github.com/RakheebShaik-web/alpaca.bot-eod-dashboard" target="_blank" rel="noopener">
+                <div class="project-image project-market"><span>ALPACA</span><i class="market-line"></i></div>
+                <div class="project-info">
+                  <h2>U.S. Stock Bot</h2>
+                  <p>LIVE</p>
+                  <p>Automated signals, risk sizing, bracket execution, monitoring, and EOD reconciliation.</p>
+                </div>
+              </a>
+              <a class="project-card" href="https://github.com/RakheebShaik-web/stocks-options-strategy" target="_blank" rel="noopener">
+                <div class="project-image project-options"><span>NSE OPTIONS</span><i class="option-orbit"></i></div>
+                <div class="project-info">
+                  <h2>NSE Options System</h2>
+                  <p>R&amp;D</p>
+                  <p>Volatility, trend, liquidity, and event-risk research for Indian derivatives.</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <span class="footer-heart">♥</span>
+        <div>
+          <p>Designed & Made with <span>♡</span></p>
+          <p>© <span id="year">2026</span> Rakheeb Shaikh. All rights reserved.</p>
+        </div>
+      </footer>
+    </div>
+  </div>
+
   <nav class="dock" aria-label="Primary navigation">
-    <a class="dock-item active" href="#home"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3 7l6-4.5L15 7v7a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 3 14V7Z"/><path d="M9 15.5v-4"/></svg><span>Home</span></a>
-    <a class="dock-item" href="/work/"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="m2 6.4 7-3.6 7 3.6L9 10 2 6.4Z"/><path d="M4 10v3.5c0 1 2.2 1.8 5 1.8s5-.8 5-1.8V10"/></svg><span>Work</span></a>
-    <a class="dock-item" href="/systems/"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="m9 2 2 5 5 2-5 2-2 5-2-5-5-2 5-2 2-5Z"/></svg><span>Systems</span></a>
-    <a class="dock-item" href="/skills/"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3 15c1-7 5-11 12-12-1 7-5 11-12 12Z"/><path d="M5 13 12 6"/></svg><span>Skills</span></a>
-    <a class="dock-item" href="/contact/"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3 4h12v10H3z"/><path d="m3 5 6 5 6-5"/></svg><span>Contact</span></a>
+    <div class="dock-inner">
+      <a class="dock-item active" href="#home"><svg viewBox="0 0 18 18"><path d="M3 7l6-4.5L15 7v7a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 3 14V7Z"/><path d="M9 15.5v-4"/></svg><span>Home</span></a>
+      <a class="dock-item" href="/work/"><svg viewBox="0 0 18 18"><path d="m2 6.4 7-3.6 7 3.6L9 10 2 6.4Z"/><path d="M4 10v3.5c0 1 2.2 1.8 5 1.8s5-.8 5-1.8V10"/></svg><span>Work</span></a>
+      <a class="dock-item" href="/systems/"><svg viewBox="0 0 18 18"><path d="m9 2 2 5 5 2-5 2-2 5-2-5-5-2 5-2 2-5Z"/></svg><span>Systems</span></a>
+      <a class="dock-item" href="/skills/"><svg viewBox="0 0 18 18"><path d="M3 15c1-7 5-11 12-12-1 7-5 11-12 12Z"/><path d="M5 13 12 6"/></svg><span>Skills</span></a>
+      <a class="dock-item" href="/contact/"><svg viewBox="0 0 18 18"><path d="M3 4h12v10H3z"/><path d="m3 5 6 5 6-5"/></svg><span>Contact</span></a>
+    </div>
   </nav>
 
-  <main class="page" id="main">
-    <section class="hero page-col" id="home" aria-labelledby="hero-title">
-      <div>
-        <p class="eyebrow">Hey, it’s me <span aria-hidden="true">↓</span></p>
-        <h1 id="hero-title">RAKHEEB <a href="https://github.com/RakheebShaik-web" target="_blank" rel="noreferrer">/ <small>@</small>RakheebShaik-web</a></h1>
-      </div>
-      <p class="intro">I’m an <strong>Algorithmic Trader</strong> at a hedge fund, turning market research into reliable trading systems.<br>I also work as a <strong>Quant Developer</strong>, building across U.S. equities and Indian options.</p>
-      <div class="about-short">
-        <p>I care about explicit <strong>risk controls</strong>, automated execution, monitoring, and reconciliation—the parts that keep a strategy honest after the backtest ends.</p>
-        <div class="actions"><a class="button" href="mailto:shaikrakheeb280@gmail.com">✉ Email me</a><span class="or">OR</span><a class="button" href="https://www.linkedin.com/in/rakheeb-shaik-aba0762b5/" target="_blank" rel="noreferrer">in LinkedIn</a></div>
-      </div>
-      <button class="system-map" type="button" aria-label="Animate the system map">
-        <span class="map-label">Research</span><i class="node n1">R</i><i class="node n2">?</i><i class="node n3">E</i><i class="node n4">M</i><i class="wire w1"></i><i class="wire w2"></i><i class="wire w3"></i><span class="map-hint">Click to inspect flow ↙</span>
-      </button>
-    </section>
-
-    <a class="contribution-section" id="work" href="https://github.com/RakheebShaik-web" target="_blank" rel="noreferrer" aria-labelledby="contribution-label">
-      <div class="month-labels mono" aria-hidden="true"><span>Aug</span><span>Jul</span><span>Jun</span><span>May</span><span>Apr</span><span>Mar</span><span>Feb</span><span>Jan</span><span>Dec</span><span>Nov</span><span>Oct</span><span>Sep</span></div>
-      <div class="calendar-clip"><div class="calendar" id="contribution-calendar" role="img" aria-label="Loading GitHub contributions"></div></div>
-      <p id="contribution-label"><strong id="contribution-total">—</strong> GitHub contributions in the last year</p>
-    </a>
-
-    <section class="timeline" aria-label="Work and education timeline">
-      <div class="timeline-rule" aria-hidden="true"></div>
-      <article><span class="timeline-dot active">SE</span><h2>Shah Equity</h2><p>Jul/25 – Now</p></article>
-      <article><span class="timeline-dot">S</span><h2>Systematic Trading</h2><p>U.S. equities · Indian options</p></article>
-      <article><span class="timeline-dot">AI</span><h2>BTech CSE · AI/ML</h2><p>NRI University · Mar/25</p></article>
-      <article><span class="timeline-dot">⌖</span><h2>Hyderabad</h2><p>India · Based here</p></article>
-    </section>
-
-    <section class="social-block" id="contact" aria-labelledby="social-title">
-      <p id="social-title">You can check these links if you wish to</p>
-      <div class="social-buttons"><a class="button" href="mailto:shaikrakheeb280@gmail.com">✉ Email</a><a class="button" href="https://github.com/RakheebShaik-web" target="_blank" rel="noreferrer">◉ Github</a><a class="button" href="https://www.linkedin.com/in/rakheeb-shaik-aba0762b5/" target="_blank" rel="noreferrer">in LinkedIn</a></div>
-    </section>
-
-    <section class="projects" id="systems" aria-labelledby="projects-title">
-      <p id="projects-title">still not sure? Check out my <strong>Systems</strong></p>
-      <div class="project-grid">
-        <a class="project-card" href="https://github.com/RakheebShaik-web/alpaca.bot-eod-dashboard" target="_blank" rel="noreferrer"><div class="project-image bot-art"><span>ALPACA</span><i>LIVE</i><b>01</b></div><div class="project-name"><h2>U.S. Stock Bot</h2><span>● LIVE</span></div><p>Python + Alpaca automation with risk sizing, bracket orders, monitoring, persistent state, and EOD reconciliation.</p></a>
-        <a class="project-card" href="https://github.com/RakheebShaik-web/stocks-options-strategy" target="_blank" rel="noreferrer"><div class="project-image options-art"><span>NSE</span><i>RESEARCH</i><b>02</b></div><div class="project-name"><h2>NSE Options System</h2><span>R&amp;D</span></div><p>Research-only Indian derivatives framework. Volatility, trend, liquidity, and event-risk filters; no live orders.</p></a>
-        <a class="project-card project-wide" href="https://github.com/RakheebShaik-web/quant-screener" target="_blank" rel="noreferrer"><div class="project-image screener-art"><span>Q · V · M</span><i>METHODOLOGY</i><b>03</b></div><div class="project-name"><h2>Quant Screener</h2><span>ROADMAP</span></div><p>Quality, value, momentum, volatility, liquidity, and trend factors for explainable ranking.</p></a>
-      </div>
-    </section>
-
-    <section class="skills" id="skills" aria-labelledby="skills-title">
-      <p id="skills-title">Tools I use to research, build, and operate</p>
-      <div class="skill-list"><span>Python</span><span>C++</span><span>TypeScript</span><span>React</span><span>FastAPI</span><span>PostgreSQL</span><span>Redis</span><span>Docker</span><span>Git</span><span>Alpaca API</span><span>IBKR API</span><span>Quant research</span><span>Risk engineering</span><span>Trading automation</span></div>
-    </section>
-
-    <footer class="page-col"><span class="footer-heart">♥</span><div><p>Designed &amp; Made with <span>♡</span></p><p>© <span id="year">2026</span> Rakheeb Shaikh. All rights reserved.</p></div></footer>
-  </main>
+  <script src="script.js" defer></script>
 </body>
 </html>
