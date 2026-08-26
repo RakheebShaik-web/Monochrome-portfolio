@@ -5,24 +5,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Rakheeb | Algorithmic Trader">
   <title>Rakheeb | Algorithmic Trader</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: '#fff',
+            background: 'hsl(200, 10%, 5%)',
+            foreground: 'hsl(0, 0%, 98%)',
+            card: 'hsl(240, 10%, 3.9%)',
+            'card-foreground': 'hsl(0, 0%, 98%)',
+            muted: 'hsl(240, 3.7%, 15.9%)',
+            'muted-foreground': 'hsl(240, 0%, 55%)',
+            border: 'hsl(240, 3.7%, 15.9%)',
+            accent: 'hsl(240, 3.7%, 15.9%)',
+          },
+          fontFamily: {
+            figtree: ['Figtree', 'sans-serif'],
+            doto: ['Doto', 'sans-serif'],
+            jetbrains: ['DM Mono', 'monospace'],
+          },
+        },
+      },
+    };
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Doto:wght@700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Doto:wght@700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="custom.css">
 </head>
-<body>
+<body class="bg-background text-foreground font-figtree antialiased">
   <div class="page">
     <div>
       <section id="hero-section" class="page-col">
         <div>
-          <div class="eyebrow">
+          <div class="jetbrains-mono flex items-center gap-1.5 text-xs tracking-tighter text-muted-foreground/60">
             <span>Hey, it's me</span>
             <svg height="12" width="12" viewBox="0 0 18 18"><path d="M6.074 10.969L5.549 9.849C5.143 8.981 5.14 7.985 5.539 7.115C5.937 6.246 6.698 5.598 7.624 5.338C7.898 5.261 8.181 5.222 8.465 5.222C9.598 5.222 10.657 5.835 11.271 6.809C11.71 5.99 12.001 5.058 12.001 4.008C12.008 2.085 10.447 0.511 8.508 0.499C7.668 0.51 6.871 0.819 6.251 1.355C5.63 0.819 4.83 0.509 3.98 0.499C2.055 0.511 0.494 2.085 0.501 4.005C0.501 7.879 4.379 10.202 5.567 10.822C5.727 10.905 5.9 10.948 6.074 10.969Z" fill="#737373" opacity="0.6"/><path d="M16.554 10.604C15.565 9.848 13.332 9.682 11.231 10.181L10.12 7.818C9.749 7.029 8.868 6.547 8.029 6.783C6.961 7.083 6.457 8.25 6.907 9.213L9.054 13.789L7.384 13.482C6.655 13.348 5.872 13.631 5.496 14.27C5.197 14.779 5.171 15.373 5.413 15.89C5.608 16.308 5.956 16.624 6.393 16.782L8.502 17.525C9.397 17.84 10.339 18.001 11.288 18.001H13.905C16.54 18.001 17.827 15.642 17.696 13.721C17.585 12.083 17.201 11.1 16.552 10.605L16.554 10.604Z" fill="#737373" opacity="0.3"/></svg>
           </div>
-          <h1>
-            <span>GURBINDER</span>
-            <a href="https://github.com/RakheebShaik-web" target="_blank" rel="noopener">
-              <span class="handle"><span>/ </span><span class="at">@</span><span>LegionWebDev</span></span>
+          <h1 class="doto-font text-2xl font-bold">
+            <span class="relative"><span>RAKHEEB</span></span>
+            <a class="group" target="_blank" href="https://github.com/RakheebShaik-web">
+              <span class="jetbrains-mono h-fit text-xs font-light tracking-tight text-muted-foreground/60 duration-200 group-hover:text-white"><span>/ </span><span class="text-xxs">@</span><span>RakheebShaik-web</span></span>
             </a>
           </h1>
         </div>
@@ -32,7 +58,7 @@
           <p class="text-sm text-muted-foreground">maybe <span class="font-medium text-white">Freelancer</span>?  Oh yeah, I've got that badge too!</p>
         </div>
         <p class="text-sm text-muted-foreground">I love both <span class="font-medium text-white">Design & Development</span>. so, That means I can create beautiful and functional websites. I'm always looking for new opportunities to learn and grow.</p>
-        <div class="flex items-center gap-3">
+        <div class="mt-5 flex items-center gap-2">
           <a class="button" href="https://twitter.com/legionsdev" target="_blank" rel="noopener">Twitter DM</a>
           <span class="or">OR</span>
           <a class="button" href="mailto:me@gurbinder.dev">Email Me</a>
