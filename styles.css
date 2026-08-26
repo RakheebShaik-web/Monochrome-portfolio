@@ -131,7 +131,7 @@ button { font: inherit; color: inherit; }
   max-width: 100%;
   min-height: 100vh;
   margin: 0 auto;
-  padding: 56px 16px 128px;
+  padding: 100px 16px 128px;
 }
 
 .page-col {
@@ -324,7 +324,7 @@ h1 small { font-size: 10px; }
 .map-label {
   position: absolute;
   font: 300 8px var(--mono);
-  color: #484848;
+  color: #777;
   white-space: nowrap;
 }
 
