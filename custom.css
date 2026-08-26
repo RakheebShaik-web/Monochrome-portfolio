@@ -433,6 +433,47 @@ footer p span {
   padding-bottom: 2.5rem;
 }
 
+/* Contribution header (gurbinder.dev style) */
+.contribution-header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contribution-line {
+  position: absolute;
+  left: 0.75rem;
+  right: 0.25rem;
+  top: 0.25rem;
+  height: 1px;
+  background: var(--border);
+  opacity: 0.4;
+}
+
+.contribution-active-dot {
+  position: absolute;
+  left: 1rem;
+  top: 0.25rem;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--brand-color);
+  box-shadow: 0 0 0 4px hsl(var(--brand-color) / 0.1);
+}
+
+.contribution-ping {
+  position: absolute;
+  left: 1rem;
+  top: 0.25rem;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--brand-color);
+  opacity: 0.5;
+  animation: ping 2s ease-in-out infinite;
+}
+
 /* Ping animation */
 @keyframes ping {
   75%, 100% {
