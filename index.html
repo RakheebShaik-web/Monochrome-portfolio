@@ -15,28 +15,76 @@
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Trading Desk Status Header -->
+  <header class="trading-desk" role="banner">
+    <div class="desk-stats">
+      <div class="desk-stat">
+        <span class="stat-label">US EQ</span>
+        <span class="stat-value live">● LIVE</span>
+        <span class="stat-sub">Alpaca + IBKR</span>
+      </div>
+      <div class="desk-stat">
+        <span class="stat-label">IND OPTIONS</span>
+        <span class="stat-value live">● LIVE</span>
+        <span class="stat-sub">NSE + Kite</span>
+      </div>
+      <div class="desk-stat">
+        <span class="stat-label">STRATEGIES</span>
+        <span class="stat-value">3</span>
+        <span class="stat-sub">active</span>
+      </div>
+      <div class="desk-stat">
+        <span class="stat-label">P&amp;L</span>
+        <span class="stat-value pnl-up">+12.4%</span>
+        <span class="stat-sub">monthly</span>
+      </div>
+    </div>
+    <div class="desk-status">
+      <span class="pulse-dot"></span>
+      <span class="mono">trading desk online</span>
+    </div>
+  </header>
+
   <nav class="dock" aria-label="Primary navigation">
     <a class="dock-item active" href="#home"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3 7l6-4.5L15 7v7a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 3 14V7Z"/><path d="M9 15.5v-4"/></svg><span>Home</span></a>
-    <a class="dock-item" href="/work/"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="m2 6.4 7-3.6 7 3.6L9 10 2 6.4Z"/><path d="M4 10v3.5c0 1 2.2 1.8 5 1.8s5-.8 5-1.8V10"/></svg><span>Work</span></a>
+    <a class="dock-item" href="#work"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="m2 6.4 7-3.6 7 3.6L9 10 2 6.4Z"/><path d="M4 10v3.5c0 1 2.2 1.8 5 1.8s5-.8 5-1.8V10"/></svg><span>Work</span></a>
     <a class="dock-item" href="#systems"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="m9 2 2 5 5 2-5 2-2 5-2-5-5-2 5-2 2-5Z"/></svg><span>Systems</span></a>
-    <a class="dock-item" href="/skills/"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3 15c1-7 5-11 12-12-1 7-5 11-12 12Z"/><path d="M5 13 12 6"/></svg><span>Skills</span></a>
+    <a class="dock-item" href="#skills"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3 15c1-7 5-11 12-12-1 7-5 11-12 12Z"/><path d="M5 13 12 6"/></svg><span>Skills</span></a>
     <a class="dock-item" href="#contact"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3 4h12v10H3z"/><path d="m3 5 6 5 6-5"/></svg><span>Contact</span></a>
   </nav>
 
   <main class="page" id="main">
     <section class="hero page-col" id="home" aria-labelledby="hero-title">
       <div>
-        <p class="eyebrow">Hey, it’s me <span aria-hidden="true">↓</span></p>
+        <p class="eyebrow">Hey, it's me <span aria-hidden="true">↓</span></p>
         <h1 id="hero-title">RAKHEEB <a href="https://github.com/RakheebShaik-web" target="_blank" rel="noreferrer">/ <small>@</small>RakheebShaik-web</a></h1>
       </div>
-      <p class="intro">I’m an <strong>Algorithmic Trader</strong> at a hedge fund, turning market research into reliable trading systems.<br>I also work as a <strong>Quant Developer</strong>, building across U.S. equities and Indian options.</p>
+      <p class="intro">I'm an <strong>Algorithmic Trader</strong> at a hedge fund, turning market research into reliable trading systems.<br>I also work as a <strong>Quant Developer</strong>, building across U.S. equities and Indian options.</p>
       <div class="about-short">
         <p>I care about explicit <strong>risk controls</strong>, automated execution, monitoring, and reconciliation—the parts that keep a strategy honest after the backtest ends.</p>
         <div class="actions"><a class="button" href="mailto:shaikrakheeb280@gmail.com">✉ Email me</a><span class="or">OR</span><a class="button" href="https://www.linkedin.com/in/rakheeb-shaik-aba0762b5/" target="_blank" rel="noreferrer">in LinkedIn</a></div>
       </div>
-      <button class="system-map" type="button" aria-label="Animate the system map">
-        <span class="map-label">Research</span><i class="node n1">R</i><i class="node n2">?</i><i class="node n3">E</i><i class="node n4">M</i><i class="wire w1"></i><i class="wire w2"></i><i class="wire w3"></i><span class="map-hint">Click to inspect flow ↙</span>
-      </button>
+
+      <!-- Trading Workflow Node Map (gurbinder.dev style) -->
+      <div class="system-map" aria-label="Trading workflow" role="img">
+        <span class="map-hint">Click to inspect flow ↙</span>
+        <span class="map-wire wire-h-top"></span>
+        <span class="map-wire wire-v"></span>
+        <span class="map-wire wire-h-bottom"></span>
+        <div class="node n-canvas"><svg viewBox="0 0 20 20" width="16" height="16"><path d="M4 4h12v12H4z" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M7 7h6M7 10h6M7 13h3" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg></div>
+        <div class="node n-concept"><svg viewBox="0 0 20 20" width="16" height="16"><path d="M10 3l2.5 5 5.5.8-4 3.9.9 5.5L10 15.6 5.1 18.2 6 12.7 2 8.8l5.5-.8z" fill="none" stroke="currentColor" stroke-width="1.2"/></svg><span class="node-dot"></span></div>
+        <div class="node n-draft"><svg viewBox="0 0 20 20" width="16" height="16"><circle cx="10" cy="10" r="3" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="10" cy="10" r="6" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5"/><path d="M10 4v2M10 14v2M4 10h2M14 10h2" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg></div>
+        <div class="node n-style"><svg viewBox="0 0 20 20" width="16" height="16"><path d="M10 3l7 12H3z" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M10 9v4M8 13h4" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg></div>
+        <div class="node n-refine"><svg viewBox="0 0 20 20" width="16" height="16"><path d="M4 10h12M10 4v12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+        <div class="node n-deliver node-dashed"><svg viewBox="0 0 20 20" width="16" height="16"><rect x="4" y="4" width="12" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M7 10h6M10 7v6" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg></div>
+        <span class="map-label label-canvas">Research</span>
+        <span class="map-label label-concept">Signal</span>
+        <span class="map-label label-draft">Strategy</span>
+        <span class="map-label label-style">Deploy</span>
+        <span class="map-label label-refine">Monitor</span>
+        <span class="map-label label-deliver">Settle</span>
+      </div>
     </section>
 
     <a class="contribution-section" id="work" href="https://github.com/RakheebShaik-web" target="_blank" rel="noreferrer" aria-labelledby="contribution-label">
@@ -47,15 +95,20 @@
 
     <section class="timeline" aria-label="Work and education timeline">
       <div class="timeline-rule" aria-hidden="true"></div>
-      <article><span class="timeline-dot active">SE</span><h2>Shah Equity</h2><p>Jul/25 – Now</p></article>
+      <article><span class="timeline-dot active">SE</span><h2>Shah Equity</h2><p>Jul/25 – Now · Algorithmic Trader</p></article>
       <article><span class="timeline-dot">S</span><h2>Systematic Trading</h2><p>U.S. equities · Indian options</p></article>
-      <article><span class="timeline-dot">AI</span><h2>BTech CSE · AI/ML</h2><p>NRI University · Mar/25</p></article>
+      <article><span class="timeline-dot">BT</span><h2>BTech CSE · AI/ML</h2><p>NRI University · Mar/25</p></article>
       <article><span class="timeline-dot">⌖</span><h2>Hyderabad</h2><p>India · Based here</p></article>
     </section>
 
     <section class="social-block" id="contact" aria-labelledby="social-title">
       <p id="social-title">You can check these links if you wish to</p>
-      <div class="social-buttons"><a class="button" href="mailto:shaikrakheeb280@gmail.com">✉ Email</a><a class="button" href="https://github.com/RakheebShaik-web" target="_blank" rel="noreferrer">◉ Github</a><a class="button" href="https://www.linkedin.com/in/rakheeb-shaik-aba0762b5/" target="_blank" rel="noreferrer">in LinkedIn</a></div>
+      <div class="social-buttons">
+        <a class="button" href="mailto:shaikrakheeb280@gmail.com">✉ Email</a>
+        <a class="button" href="https://github.com/RakheebShaik-web" target="_blank" rel="noreferrer">◉ Github</a>
+        <a class="button" href="https://www.linkedin.com/in/rakheeb-shaik-aba0762b5/" target="_blank" rel="noreferrer">in LinkedIn</a>
+        <a class="button" href="https://x.com/rakheebtrades" target="_blank" rel="noreferrer">𝕏 Twitter</a>
+      </div>
     </section>
 
     <section class="projects" id="systems" aria-labelledby="projects-title">
