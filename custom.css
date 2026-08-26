@@ -500,6 +500,42 @@ footer p span {
   --tw-gradient-to: transparent;
 }
 
+/* Bottom progressive blur */
+.bottom-progressive-blur {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 50;
+  height: 5rem;
+  width: 100%;
+  background: linear-gradient(to top, hsl(var(--background)), transparent);
+  pointer-events: none;
+}
+
+/* Box relative layout */
+.box-relative {
+  position: relative;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+/* Work entry hover */
+.work-entry {
+  transition: color 0.2s, transform 0.2s;
+}
+
+.work-entry:hover {
+  color: hsl(var(--brand-color));
+}
+
+.work-entry:hover .work-icon {
+  border-color: hsl(var(--muted-foreground));
+  color: hsl(var(--foreground));
+  transform: translateY(-2px);
+  box-shadow: 0 9px 22px #000;
+}
+
 /* Responsive */
 @media (max-width: 700px) {
   .page { padding-top: 2.5rem; }
