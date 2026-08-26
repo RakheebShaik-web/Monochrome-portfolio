@@ -423,15 +423,17 @@ footer p span {
   margin-top: 2.5rem;
 }
 
-/* Hero box */
+/* Hero section (gurbinder.dev exact) */
 #hero-section {
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 1.5rem;
+  margin-top: 2.5rem;
+  padding-bottom: 2.5rem;
 }
 
-/* Ping animation for active status */
+/* Ping animation */
 @keyframes ping {
   75%, 100% {
     transform: scale(2);
@@ -441,6 +443,20 @@ footer p span {
 
 .animate-ping {
   animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* Text gradient for active indicator */
+.bg-gradient-to-br {
+  background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
+}
+
+.from-accent {
+  --tw-gradient-from: hsl(240, 3.7%, 15.9%);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, hsl(240, 3.7%, 15.9% / 0));
+}
+
+.to-transparent {
+  --tw-gradient-to: transparent;
 }
 
 /* Responsive */
