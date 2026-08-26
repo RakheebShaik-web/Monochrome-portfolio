@@ -67,14 +67,7 @@
         </div>
         <div class="system-map" aria-label="Research-to-execution system map">
           <div class="map-container">
-            <svg class="trade-flow" viewBox="0 0 668 220" preserveAspectRatio="none" aria-hidden="true">
-              <defs><filter id="flow-glow"><feGaussianBlur stdDeviation="2.4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-              <path class="flow-path flow-path-top" d="M426 28 H644 V196"/>
-              <path class="flow-path flow-path-main" d="M34 196 H644"/>
-              <circle class="flow-packet packet-top" r="3" filter="url(#flow-glow)"><animateMotion dur="4.8s" repeatCount="indefinite" path="M426 28 H644 V196"/></circle>
-              <circle class="flow-packet packet-main" r="3" filter="url(#flow-glow)"><animateMotion dur="6.4s" repeatCount="indefinite" path="M34 196 H644"/></circle>
-              <circle class="flow-packet packet-main packet-late" r="2.2" filter="url(#flow-glow)"><animateMotion dur="6.4s" begin="-3.2s" repeatCount="indefinite" path="M34 196 H644"/></circle>
-            </svg>
+            <div class="trade-flow" aria-hidden="true"><i class="beam beam-top"><b></b></i><i class="beam beam-drop"><b></b></i><i class="beam beam-main"><b></b><b></b></i></div>
             <div class="node n-canvas"><svg viewBox="0 0 20 20" width="16" height="16"><path d="M4 4h12v12H4z" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></div>
             <div class="node n-concept"><svg viewBox="0 0 20 20" width="16" height="16"><path d="M10 3l2.5 5 5.5.8-4 3.9.9 5.5L10 15.6 5.1 18.2 6 12.7 2 8.8l5.5-.8z" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></div>
             <div class="node n-draft"><svg viewBox="0 0 20 20" width="16" height="16"><circle cx="10" cy="10" r="3" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="10" cy="10" r="6" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5"/></svg></div>
