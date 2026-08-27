@@ -578,6 +578,7 @@ footer p span {
   }
 }
 .project-stars{color:#d9d9d9;font:400 9px/14px 'DM Mono',monospace;white-space:nowrap}
+#main-section>.box.flex.flex-col.gap-6>.relative:first-of-type>.absolute:after{content:"";position:absolute;left:16px;top:4px;width:112px;height:1px;background:linear-gradient(90deg,#fafafa,transparent)}
 
 /* Reference-calibrated desktop composition */
 @media (min-width: 701px) {
@@ -595,9 +596,9 @@ footer p span {
   #main-section>.box{margin-top:32px}
   #main-section>.box:first-child{margin-top:0}
   #main-section>.box.flex.flex-col.gap-6{position:relative;display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px!important;margin-top:55px;padding-top:25px}
-  #main-section>.box.flex.flex-col.gap-6:before{content:"";position:absolute;left:10px;right:10px;top:5px;height:1px;background:#27272a}
+  #main-section>.box.flex.flex-col.gap-6:before{content:"";position:absolute;left:12px;right:60px;top:5px;height:1px;background:rgba(39,39,42,.4)}
   #main-section>.box.flex.flex-col.gap-6>.relative{padding-top:13px!important;min-width:0}
-  #main-section>.box.flex.flex-col.gap-6 .absolute{top:-17px!important}
+  #main-section>.box.flex.flex-col.gap-6>.relative>.absolute{top:-17px!important}
   #main-section>.box.flex.flex-col.gap-6 .sm\:flex-row{display:block!important}
   #main-section>.box.flex.flex-col.gap-6 .text-sm{font-size:9px;line-height:13px}
   #main-section>.box.flex.flex-col.gap-6 .font-medium{font-size:12px;line-height:16px;white-space:nowrap}
@@ -620,9 +621,9 @@ footer p span {
   #main-section>.box{margin-top:40px}
   #main-section>.box:first-child{height:133px;margin-top:0}
   #main-section>.box.flex.flex-col.gap-6{position:relative;display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px!important;height:82px;margin-top:40px;padding-top:25px}
-  #main-section>.box.flex.flex-col.gap-6:before{content:"";position:absolute;left:10px;right:10px;top:5px;height:1px;background:#27272a}
+  #main-section>.box.flex.flex-col.gap-6:before{content:"";position:absolute;left:12px;right:60px;top:5px;height:1px;background:rgba(39,39,42,.4)}
   #main-section>.box.flex.flex-col.gap-6>.relative{padding-top:13px!important;min-width:0}
-  #main-section>.box.flex.flex-col.gap-6 .absolute{top:-17px!important}
+  #main-section>.box.flex.flex-col.gap-6>.relative>.absolute{top:-17px!important}
   #main-section>.box.flex.flex-col.gap-6 .sm\:flex-row{display:block!important}
   #main-section>.box.flex.flex-col.gap-6 .text-sm{font-size:8px;line-height:12px}
   #main-section>.box.flex.flex-col.gap-6 .font-medium{font-size:10px;line-height:14px;white-space:nowrap}
