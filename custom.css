@@ -642,3 +642,21 @@ footer{flex-direction:column;gap:8px}footer .footer-heart{line-height:18px}foote
 /* Measured directly from the reference at 1440px. */
 .dock{bottom:32px;width:max-content;height:57px;padding:10px 24px;border:1px solid rgba(39,39,42,.5);background:rgba(26,27,28,.6);border-radius:9999px;box-shadow:0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -2px rgba(0,0,0,.1);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}.dock-inner{display:flex;gap:32px}.dock-item{width:auto;height:35px;flex:none;padding:0;gap:0;color:#737373;transform:none;transition:all .2s}.dock-item svg{display:block;width:18px;height:18px;margin:0 0 2px;opacity:.3;transition:all .2s}.dock-item span{font:500 10px/15px 'Figtree',sans-serif;letter-spacing:0;text-transform:none}.dock-item.active{color:#fafafa;transform:scale(1.1)!important}.dock-item.active svg{opacity:1}.dock-item:not(.active):hover{color:rgba(250,250,250,.8);transform:none!important}@media(max-width:640px){.dock{bottom:16px}}
 @media(max-width:359px){.dock{padding-inline:18px}.dock-inner{gap:20px}}
+
+/* Synchronized research-to-data signal choreography. */
+.beam-top{left:63.77%;right:5.09%;top:27px}.beam-drop{right:5.09%;top:27px;bottom:24px}.beam-main{left:5.09%;right:5.09%;bottom:24px}
+.beam b{width:6px;height:6px;background:#f4f4f4;box-shadow:0 0 3px #fff,0 0 10px #ffffffd9,0 0 24px #ffffff73;will-change:left,right,top,opacity}
+.beam b:before,.beam b:after{content:"";position:absolute;left:50%;top:50%;border-radius:50%;pointer-events:none;transform:translate(-50%,-50%)}
+.beam b:before{width:18px;height:18px;border:1px solid #ffffff24;box-shadow:inset 0 0 8px #ffffff18;animation:signalHalo 1.1s ease-in-out infinite}
+.beam b:after{width:34px;height:34px;background:radial-gradient(circle,#ffffff1f 0,transparent 66%);filter:blur(2px)}
+.beam-top b{left:0;animation:signalTop 8s linear infinite}.beam-drop b{top:0;left:-2.5px;background:#72dfa0;box-shadow:0 0 3px #b8ffd3,0 0 11px #72dfa0,0 0 26px #72dfa080;animation:signalDrop 8s linear infinite}.beam-main b{left:auto;right:0;animation:signalReturn 8s linear infinite}.beam-main b+ b{display:none}
+@keyframes signalTop{0%{left:0;opacity:0}1.5%{opacity:1}20.5%{opacity:1}22%{left:calc(100% - 6px);opacity:0}22.01%,100%{left:0;opacity:0}}
+@keyframes signalDrop{0%,21.99%{top:0;opacity:0}22.5%{opacity:1}34.5%{opacity:1}36%{top:calc(100% - 6px);opacity:0}36.01%,100%{top:0;opacity:0}}
+@keyframes signalReturn{0%,35.99%{right:0;opacity:0}36.5%{opacity:1}98.5%{opacity:1}100%{right:calc(100% - 6px);opacity:0}}
+@keyframes signalHalo{0%,100%{opacity:.28;transform:translate(-50%,-50%) scale(.7)}50%{opacity:.85;transform:translate(-50%,-50%) scale(1.15)}}
+.map-container .node{animation:nodeArrival 8s linear infinite;transition:border-color .35s,color .35s,background-color .35s,box-shadow .35s}
+.map-container .n-canvas{animation-delay:0s}.map-container .n-concept{animation-delay:1.76s}.map-container .n-draft{animation-delay:2.88s}.map-container .n-style{animation-delay:4.64s}.map-container .n-refine{animation-delay:6.32s}.map-container .n-deliver{animation-delay:7.82s}
+@keyframes nodeArrival{0%{color:#f4f4f4;border-color:#737373;background:#202122;box-shadow:0 0 0 1px #ffffff14,0 0 18px #ffffff24}2.5%{box-shadow:0 0 0 5px #ffffff08,0 0 26px #ffffff2b}7%{color:#777;border-color:#343638;background:#1a1b1c;box-shadow:none}100%{color:#555;border-color:#27272a;background:#1a1b1c;box-shadow:none}}
+.map-container .n-draft{animation-name:executionArrival}
+@keyframes executionArrival{0%{color:#9ff0bd;border-color:#62bd84;background:#17211b;box-shadow:0 0 0 1px #72dfa024,0 0 20px #72dfa052}2.5%{box-shadow:0 0 0 5px #72dfa00d,0 0 30px #72dfa066}7%{color:#66776c;border-color:#343b36;background:#1a1b1c;box-shadow:none}100%{color:#555;border-color:#27272a;background:#1a1b1c;box-shadow:none}}
+@media(prefers-reduced-motion:reduce){.beam b{display:none}.map-container .node{animation:none}.map-container .n-canvas,.map-container .n-concept,.map-container .n-draft,.map-container .n-style,.map-container .n-refine,.map-container .n-deliver{color:#737373;border-color:#343638}}
