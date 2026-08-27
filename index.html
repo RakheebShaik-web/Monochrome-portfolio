@@ -67,7 +67,29 @@
         </div>
         <div class="system-map" aria-label="Research-to-execution system map">
           <div class="map-container">
-            <div class="trade-flow" aria-hidden="true"><i class="beam beam-top"><b></b></i><i class="beam beam-drop"><b></b></i><i class="beam beam-main"><b></b><b></b></i></div>
+            <div class="trade-flow" aria-hidden="true">
+              <svg class="signal-circuit" viewBox="0 0 668 183" preserveAspectRatio="none">
+                <defs>
+                  <radialGradient id="signal-aura"><stop offset="0" stop-color="#fff" stop-opacity=".34"/><stop offset=".36" stop-color="#fff" stop-opacity=".12"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+                  <filter id="signal-bloom" x="-300%" y="-300%" width="700%" height="700%"><feGaussianBlur stdDeviation="2.1" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                  <linearGradient id="signal-trail" x1="0" x2="1"><stop stop-color="#fff" stop-opacity="0"/><stop offset=".7" stop-color="#fff" stop-opacity=".12"/><stop offset="1" stop-color="#fff" stop-opacity=".8"/></linearGradient>
+                </defs>
+                <path class="circuit-ambient" d="M34 159H634V27H426"/>
+                <path class="circuit-route" pathLength="1000" d="M426 27H634V159H34"/>
+                <path class="circuit-trail circuit-trail-soft" pathLength="1000" d="M426 27H634V159H34"/>
+                <path class="circuit-trail circuit-trail-core" pathLength="1000" d="M426 27H634V159H34"/>
+                <g class="signal-head">
+                  <circle class="signal-head-aura" r="20" fill="url(#signal-aura)"/>
+                  <circle class="signal-head-ring" r="8" fill="none" stroke="#fff" stroke-opacity=".24"/>
+                  <circle class="signal-head-core" r="2.8" fill="#f7f7f7" filter="url(#signal-bloom)"><animate attributeName="fill" dur="10s" repeatCount="indefinite" values="#f7f7f7;#f7f7f7;#72dfa0;#72dfa0;#f7f7f7;#f7f7f7" keyTimes="0;.21;.23;.37;.4;1"/></circle>
+                  <animateMotion dur="10s" repeatCount="indefinite" path="M426 27H634V159H34"/>
+                </g>
+                <g class="signal-echo" opacity=".32">
+                  <circle r="1.6" fill="#fff" filter="url(#signal-bloom)"/>
+                  <animateMotion begin="-.16s" dur="10s" repeatCount="indefinite" path="M426 27H634V159H34"/>
+                </g>
+              </svg>
+            </div>
             <div class="node n-canvas"><svg aria-label="Research" viewBox="0 0 20 20" width="17" height="17"><circle cx="8.5" cy="8.5" r="4.5" fill="none" stroke="currentColor"/><path d="m12 12 4 4M6.5 9.5l1.4-1.6 1.4 1 2-2.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
             <div class="node n-concept"><svg aria-label="Signal" viewBox="0 0 20 20" width="17" height="17"><path d="M5 4v12M3.5 7h3v5h-3V7Zm6-3v12M8 6h3v6H8V6Zm6-2v12m-1.5-9h3v5h-3V7Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
             <div class="node n-draft"><svg aria-label="Execution" viewBox="0 0 20 20" width="17" height="17"><path d="m11.5 2.5-7 9h5l-1 6 7-9h-5l1-6Z" fill="currentColor" fill-opacity=".12" stroke="currentColor" stroke-linejoin="round"/></svg></div>
