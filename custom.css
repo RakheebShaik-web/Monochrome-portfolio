@@ -647,3 +647,5 @@ footer{flex-direction:column;gap:8px}footer .footer-heart{line-height:18px}foote
 @keyframes packetReverse{0%{right:0;left:auto;opacity:0}8%,88%{opacity:1}100%{right:calc(100% - 6px);left:auto;opacity:0}}
 .beam-main b{left:auto;animation-name:packetReverse}
 @media(max-width:400px){.dock{width:min(366px,calc(100vw - 20px));padding-inline:8px}.dock-item{width:56px;flex-basis:56px}}
+/* One icon language on every page (the reference's geometric glyph set). */
+.dock-item svg{display:none}.dock-item:before{display:block;width:18px;height:18px;margin:0 0 2px;color:currentColor;font:16px/18px 'DM Mono',monospace;text-align:center}.dock-item:nth-child(1):before{content:'⌂'}.dock-item:nth-child(2):before{content:'▣'}.dock-item:nth-child(3):before{content:'◇'}.dock-item:nth-child(4):before{content:'✦'}.dock-item:nth-child(5):before{content:'□'}
