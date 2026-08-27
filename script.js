@@ -62,16 +62,4 @@ if ('IntersectionObserver' in window) {
   sections.forEach(section => navObserver.observe(section));
 }
 
-if (!reduceMotion) {
-  [...document.querySelectorAll('#hero-section > *, .contribution-section, .work-section, .social-block, .projects, footer')].forEach((element, index) => {
-    element.style.opacity = '0';
-    element.style.transform = 'translateY(8px)';
-    element.style.transition = `opacity 0.5s ${index * 60}ms, transform 0.5s ${index * 60}ms cubic-bezier(0.2,0.8,0.2,1)`;
-    setTimeout(() => {
-      element.style.opacity = '1';
-      element.style.transform = 'translateY(0)';
-    }, 100);
-  });
-}
-
 document.querySelector('#year').textContent = new Date().getFullYear();
