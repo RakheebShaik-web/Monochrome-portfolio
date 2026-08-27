@@ -6,6 +6,7 @@ if (!reduceMotion) {
   }, { passive: true });
 }
 const calendar = document.querySelector('#contribution-calendar');
+const calendarClip = calendar?.closest('.calendar-clip');
 const total = document.querySelector('#contribution-total');
 const level = count => count === 0 ? 0 : count < 3 ? 1 : count < 6 ? 2 : count < 10 ? 3 : 4;
 
@@ -20,7 +21,14 @@ function renderCalendar(days) {
   });
   calendar.replaceChildren(fragment);
   calendar.setAttribute('aria-label', `GitHub contribution calendar showing ${days.length} days`);
+  requestAnimationFrame(showRecentContributions);
 }
+
+function showRecentContributions() {
+  if (calendarClip) calendarClip.scrollLeft = calendarClip.scrollWidth;
+}
+
+window.addEventListener('resize', showRecentContributions, { passive: true });
 
 function fallback() {
   const now = new Date();
