@@ -73,20 +73,21 @@
                   <radialGradient id="signal-aura"><stop offset="0" stop-color="#fff" stop-opacity=".34"/><stop offset=".36" stop-color="#fff" stop-opacity=".12"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
                   <filter id="signal-bloom" x="-300%" y="-300%" width="700%" height="700%"><feGaussianBlur stdDeviation="2.1" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
                   <linearGradient id="signal-trail" x1="0" x2="1"><stop stop-color="#fff" stop-opacity="0"/><stop offset=".7" stop-color="#fff" stop-opacity=".12"/><stop offset="1" stop-color="#fff" stop-opacity=".8"/></linearGradient>
+                  <linearGradient id="route-metal" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#232526"/><stop offset=".42" stop-color="#3b3d3e"/><stop offset=".72" stop-color="#292b2c"/><stop offset="1" stop-color="#202223"/></linearGradient>
                 </defs>
-                <path class="circuit-ambient" d="M34 159H634V27H426"/>
-                <path class="circuit-route" pathLength="1000" d="M426 27H634V159H34"/>
-                <path class="circuit-trail circuit-trail-soft" pathLength="1000" d="M426 27H634V159H34"/>
-                <path class="circuit-trail circuit-trail-core" pathLength="1000" d="M426 27H634V159H34"/>
+                <path class="circuit-ambient" d="M426 27H624Q634 27 634 37V149Q634 159 624 159H34"/>
+                <path class="circuit-route" pathLength="1000" d="M426 27H624Q634 27 634 37V149Q634 159 624 159H34"/>
+                <path class="circuit-trail circuit-trail-soft" pathLength="1000" d="M426 27H624Q634 27 634 37V149Q634 159 624 159H34"/>
+                <path class="circuit-trail circuit-trail-core" pathLength="1000" d="M426 27H624Q634 27 634 37V149Q634 159 624 159H34"/>
                 <g class="signal-head">
                   <circle class="signal-head-aura" r="14" fill="url(#signal-aura)"/>
                   <circle class="signal-head-ring" r="6" fill="none" stroke="#fff" stroke-opacity=".2"/>
                   <circle class="signal-head-core" r="2.35" fill="#f7f7f7" filter="url(#signal-bloom)"><animate attributeName="fill" dur="10s" repeatCount="indefinite" values="#f7f7f7;#f7f7f7;#72dfa0;#72dfa0;#f7f7f7;#f7f7f7" keyTimes="0;.21;.23;.37;.4;1"/></circle>
-                  <animateMotion dur="10s" repeatCount="indefinite" path="M426 27H634V159H34"/>
+                  <animateMotion dur="10s" repeatCount="indefinite" path="M426 27H624Q634 27 634 37V149Q634 159 624 159H34"/>
                 </g>
                 <g class="signal-echo" opacity=".32">
                   <circle r="1.6" fill="#fff" filter="url(#signal-bloom)"/>
-                  <animateMotion begin="-.16s" dur="10s" repeatCount="indefinite" path="M426 27H634V159H34"/>
+                  <animateMotion begin="-.16s" dur="10s" repeatCount="indefinite" path="M426 27H624Q634 27 634 37V149Q634 159 624 159H34"/>
                 </g>
               </svg>
             </div>
