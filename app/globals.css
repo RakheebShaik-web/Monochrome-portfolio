@@ -77,3 +77,11 @@ footer{display:flex;justify-content:space-between;margin-top:62px;padding-top:18
 .workflow-runner:before,.workflow-runner:after{animation:carried-light 1.8s ease-in-out infinite}
 @media(max-width:700px){.contributions{margin-inline:-16px;padding-inline:16px}.calendar-track{min-width:633px}.motion-ready [data-reveal]{transform:translateY(10px)}.project-card{-webkit-tap-highlight-color:transparent}}
 @media(prefers-reduced-motion:reduce){.motion-ready [data-reveal]{opacity:1;transform:none;transition:none}.workflow-runner:before,.workflow-runner:after{animation:none}}
+
+/* Single-layer order ticket: LEDs move with the ticket without compositor trails */
+.workflow-runner{isolation:isolate;backface-visibility:hidden;background:linear-gradient(145deg,#1a1e1f,#0e1011);box-shadow:0 9px 20px #000c,inset 0 1px #ffffff1c,inset 3px 0 #dda43855,inset -3px 0 #63d78255}
+.workflow-runner:before,.workflow-runner:after{content:none;animation:none}
+.runner-led{position:absolute;top:5px;width:5px;height:5px;border-radius:50%}.runner-led-amber{left:5px;background:var(--amber);box-shadow:0 0 5px #dda438aa}.runner-led-green{right:5px;background:var(--green);box-shadow:0 0 5px #63d782aa}
+
+/* Monochrome technology marks */
+.skill-chip{gap:7px}.skill-logo{display:inline-flex;width:15px;height:15px;flex:0 0 15px;align-items:center;justify-content:center;color:#9da2a3;transition:color 180ms ease,transform 220ms var(--ease)}.skill-logo svg{width:13px;height:13px;fill:currentColor}.skill-mark{border:1px solid #363a3c;border-radius:3px;font:600 4.5px/1 var(--font-mono),monospace;letter-spacing:-.03em}.skill-chip>span:last-child{white-space:nowrap}@media(hover:hover) and (pointer:fine){.skill-chip:hover .skill-logo{color:#edf0f0;transform:scale(1.08)}}.skill-chip:active .skill-logo{transform:scale(.9)}

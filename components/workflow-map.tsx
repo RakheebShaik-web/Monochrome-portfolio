@@ -26,7 +26,7 @@ export function WorkflowMap() {
     <div className="workflow" aria-label="Trading workflow from universe selection to end-of-day reconciliation">
       <svg className="workflow-rails" viewBox="0 0 668 183" preserveAspectRatio="none" aria-hidden="true"><path d="M450 27H610M634 51V135M450 159H610M253 159H402M58 159H205" /></svg>
       <div className="workflow-legend" aria-hidden="true"><span className="lamp lamp-green">MARKET OPEN</span><span className="lamp lamp-amber">RISK ARMED</span></div>
-      <div className="workflow-runner" aria-hidden="true"><b>BUY</b><svg viewBox="0 0 24 14"><path d="M2 7h15m-4-4 4 4-4 4"/><circle cx="21" cy="7" r="1.5"/></svg><small>120 AAPL</small></div>
+      <div className="workflow-runner" aria-hidden="true"><span className="runner-led runner-led-amber"/><span className="runner-led runner-led-green"/><b>BUY</b><svg viewBox="0 0 24 14"><path d="M2 7h15m-4-4 4 4-4 4"/><circle cx="21" cy="7" r="1.5"/></svg><small>120 AAPL</small></div>
       {nodes.map(([id, label, state]) => <div className={`workflow-node node-${id}`} data-label={label} data-state={state} key={id}><NodeMark id={id} /></div>)}
     </div>
   );
