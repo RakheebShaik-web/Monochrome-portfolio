@@ -1,10 +1,3 @@
-const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-if (!reduceMotion) {
-  window.addEventListener('pointermove', event => {
-    document.documentElement.style.setProperty('--mouse-x', `${event.clientX}px`);
-    document.documentElement.style.setProperty('--mouse-y', `${event.clientY}px`);
-  }, { passive: true });
-}
 const calendar = document.querySelector('#contribution-calendar');
 const calendarClip = calendar?.closest('.calendar-clip');
 const total = document.querySelector('#contribution-total');
