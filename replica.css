@@ -92,8 +92,9 @@ body:before{display:none}
 .map-container .n-canvas:after,.map-container .n-concept:after{top:-18px}
 .map-container .n-draft:after,.map-container .n-style:after,.map-container .n-refine:after,.map-container .n-deliver:after{top:54px}
 .flow-runner{--run-x-0:402px;--run-x-1:610px;--run-x-2:402px;--run-x-3:205px;--run-x-4:10px;--run-y-0:4px;--run-y-1:135px;position:absolute;z-index:4;left:0;top:0;display:flex;width:48px;height:48px;align-items:center;justify-content:center;border:1px solid #626465;border-radius:5px;background:#111213;color:#d8d9d9;box-shadow:0 7px 16px #00000073,inset 0 1px #ffffff0c;will-change:transform,opacity;animation:reference-card-route 16s cubic-bezier(.75,-.01,0,.99) infinite,reference-card-visibility 16s linear infinite}
-.flow-runner:before{content:"";position:absolute;inset:4px;border:1px solid #ffffff08;border-radius:2px}
-.flow-runner svg{position:relative;z-index:1;opacity:.92}
+.flow-runner:before{content:"";position:absolute;inset:4px;border-radius:2px;background:linear-gradient(#ffffff24,#ffffff24) left top/6px 1px no-repeat,linear-gradient(#ffffff24,#ffffff24) left top/1px 6px no-repeat,linear-gradient(#ffffff24,#ffffff24) right top/6px 1px no-repeat,linear-gradient(#ffffff24,#ffffff24) right top/1px 6px no-repeat,linear-gradient(#ffffff18,#ffffff18) left bottom/6px 1px no-repeat,linear-gradient(#ffffff18,#ffffff18) left bottom/1px 6px no-repeat,linear-gradient(#ffffff18,#ffffff18) right bottom/6px 1px no-repeat,linear-gradient(#ffffff18,#ffffff18) right bottom/1px 6px no-repeat}
+.flow-runner svg{position:relative;z-index:1;opacity:.96}
+.runner-mark .runner-ask,.runner-mark .runner-bid,.runner-mark .runner-mid,.runner-mark .runner-fill{stroke-width:1;vector-effect:non-scaling-stroke}.runner-mark .runner-ask{stroke:var(--trade-amber);filter:drop-shadow(0 0 2px var(--trade-amber-dim))}.runner-mark .runner-bid{stroke:var(--trade-green);filter:drop-shadow(0 0 2px var(--trade-green-dim))}.runner-mark .runner-mid{fill:#ffffff0b;stroke:#d9dbdc}.runner-mark .runner-fill{stroke:#d9dbdc}.runner-mark .runner-fill-dot{fill:#e6e7e7}
 @keyframes reference-card-route{
   0%{transform:translate(var(--run-x-0),var(--run-y-0))}
   18%,20%{transform:translate(var(--run-x-1),var(--run-y-0))}
@@ -114,8 +115,43 @@ body:before{display:none}
   .map-container .n-concept,.map-container .n-draft{left:calc(94.91% - 19px);right:auto}
   .map-container .n-refine{left:calc(34.28% - 19px)}
   .map-container .n-deliver{left:calc(5.09% - 19px)}
+  .map-container .n-concept:after,.map-container .n-draft:after{left:auto;right:0;text-align:right}
   .map-container .n-draft:after,.map-container .n-style:after,.map-container .n-refine:after,.map-container .n-deliver:after{top:44px}
   .flow-runner{--run-x-0:calc(63.77vw - 39.4064px);--run-x-1:calc(94.91vw - 49.3712px);--run-x-2:calc(63.77vw - 39.4064px);--run-x-3:calc(34.28vw - 29.9696px);--run-x-4:calc(5.09vw - 20.6288px);--run-y-0:0px;--run-y-1:107px;width:38px;height:38px}
   .flow-runner svg{width:15px;height:15px}
 }
 @media(prefers-reduced-motion:reduce){.flow-runner{display:none}}
+
+/* Trading-language labels and functional status lights. */
+:root{--trade-green:#63d782;--trade-amber:#dda438;--trade-green-dim:#63d78224;--trade-amber-dim:#dda43824}
+.n-canvas:after{content:"Market Scan"}.n-concept:after{content:"Alpha Signal"}.n-draft:after{content:"Order Router"}.n-style:after{content:"Risk Gate"}.n-refine:after{content:"Position State"}.n-deliver:after{content:"Trade Ledger"}
+.map-container .node.status-live:before,.map-container .node.status-watch:before{content:"";position:absolute;z-index:3;display:block;inset:7px 7px auto auto;width:4px;height:4px;border:0;border-radius:50%;background:var(--trade-green);box-shadow:0 0 7px var(--trade-green-dim)}
+.map-container .node.status-watch:before{background:var(--trade-amber);box-shadow:0 0 7px var(--trade-amber-dim)}
+.map-container .node.status-live:hover{border-color:#385c43;color:#b8d9c1}.map-container .node.status-watch:hover{border-color:#67502d;color:#dec897}
+
+/* Project-specific thumbnail instruments; no generic dashboard screenshots. */
+.stock-terminal,.options-terminal{background-image:linear-gradient(145deg,#111415 0,#090b0c 72%)!important;background-position:0 0!important;background-size:auto!important;border-color:#222628;isolation:isolate}
+.stock-terminal>*,.options-terminal>*{visibility:visible}
+.stock-terminal:before,.options-terminal:before{z-index:0;background:linear-gradient(#ffffff025 1px,transparent 1px),linear-gradient(90deg,#ffffff018 1px,transparent 1px);background-size:100% 4px,24px 100%;opacity:.42}
+.stock-terminal:after,.options-terminal:after{z-index:1;inset:auto;width:104px;height:104px;border:0;background:none;font:700 68px/1 "Doto",sans-serif;letter-spacing:-.08em;opacity:.035;pointer-events:none}
+.stock-terminal:after{content:"OMS";right:-4px;bottom:-8px;color:var(--trade-green)}
+.options-terminal:after{content:"IV";right:10px;bottom:-6px;color:var(--trade-amber)}
+.terminal-top,.terminal-body,.options-body,.terminal-tape{position:relative;z-index:2}
+.terminal-top{color:#8d9294}.terminal-top>span:first-child{color:#d5d8d9}
+.terminal-health,.terminal-watch{display:inline-flex;align-items:center;gap:5px;color:var(--trade-green)}
+.terminal-health:before,.terminal-watch:before{content:"";width:5px;height:5px;border-radius:50%;background:currentColor;box-shadow:0 0 8px currentColor}
+.terminal-watch{color:var(--trade-amber)}
+.stock-terminal .terminal-line{stroke:var(--trade-green);filter:drop-shadow(0 0 4px var(--trade-green-dim))}
+.stock-terminal .terminal-area{fill:#63d7820b}
+.stock-terminal .terminal-side span:nth-child(2) strong{color:var(--trade-amber)}
+.stock-terminal .terminal-side span:nth-child(3) strong{color:var(--trade-green)}
+.options-terminal .surface-lines{stroke:#35322c}
+.options-terminal .vol-smile{stroke:var(--trade-amber);filter:drop-shadow(0 0 4px var(--trade-amber-dim))}
+.options-terminal .greeks-panel span:nth-child(1) strong,.options-terminal .greeks-panel span:nth-child(4) strong{color:var(--trade-amber)}
+.options-terminal .greeks-panel span:nth-child(2) strong{color:#c8cbcc}.options-terminal .greeks-panel span:nth-child(3) strong{color:#bf8c35}
+.terminal-tape span:first-child{color:#9ba09f}.stock-terminal .terminal-tape span:first-child{color:var(--trade-green)}.options-terminal .terminal-tape span:first-child{color:var(--trade-amber)}
+@media(hover:hover) and (pointer:fine){
+  .project-card:hover .stock-terminal{border-color:#31533b;box-shadow:0 16px 34px #0008,0 0 28px #63d7820b;filter:none}
+  .project-card:hover .options-terminal{border-color:#5c4728;box-shadow:0 16px 34px #0008,0 0 28px #dda4380b;filter:none}
+  .project-card:hover .stock-terminal .terminal-line{stroke:#86e39d}.project-card:hover .options-terminal .vol-smile{stroke:#edb64d}
+}
