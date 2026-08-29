@@ -643,6 +643,33 @@ footer{flex-direction:column;gap:8px}footer .footer-heart{line-height:18px}foote
 .dock{bottom:32px;width:max-content;height:57px;padding:10px 24px;border:1px solid rgba(39,39,42,.5);background:rgba(26,27,28,.6);border-radius:9999px;box-shadow:0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -2px rgba(0,0,0,.1);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}.dock-inner{display:flex;gap:32px}.dock-item{width:auto;height:35px;flex:none;padding:0;gap:0;color:#737373;transform:none;transition:all .2s}.dock-item svg{display:block;width:18px;height:18px;margin:0 0 2px;opacity:.3;transition:all .2s}.dock-item span{font:500 10px/15px 'Figtree',sans-serif;letter-spacing:0;text-transform:none}.dock-item.active{color:#fafafa;transform:scale(1.1)!important}.dock-item.active svg{opacity:1}.dock-item:not(.active):hover{color:rgba(250,250,250,.8);transform:none!important}@media(max-width:640px){.dock{bottom:16px}}
 @media(max-width:359px){.dock{padding-inline:18px}.dock-inner{gap:20px}}
 
+/* Readability pass: preserve the quiet monochrome tone while lifting secondary text and rails. */
+:root{--muted:#96999a;--dim:#5d6062;--border:#303335}
+.eyebrow{color:#a4a7a8}.eyebrow span,h1 a{color:#777b7d}
+.intro,.about-short p,.social-block>p,.projects>p,.skills>p{color:#96999a}
+.system-map{opacity:.9}.map-container .node{color:#777b7d;border-color:#3a3d3f}
+@media(min-width:701px){.page{max-width:700px}.system-map{width:668px}}
+@media(min-width:701px){#main-section{margin-top:143px}}
+@media(min-width:701px){#main-section>.career-track.box.flex.flex-col.gap-6{margin-top:39px}}
+@media(max-width:700px){.system-map{opacity:.78}}
+
+/* Reference shell calibration: the page is a quiet 700px column with long-form
+   rhythm, hairline rules, and a fixed translucent control dock. */
+html,body{scrollbar-width:none}html::-webkit-scrollbar,body::-webkit-scrollbar{display:none}
+.page{min-height:100svh;max-width:700px;padding:56px 16px 128px}
+.page-col{gap:16px}
+#main-section>.box{margin-top:40px}
+.contribution-section{margin-top:40px}
+.calendar-clip{border:0;background:transparent}
+.calendar{filter:drop-shadow(0 0 7px #ffffff08)}
+.career-track{margin-top:40px!important}
+.career-track:before{background:linear-gradient(90deg,#6d7071 0,#373a3b 42%,#242627 100%)!important}
+.career-track .h-6{box-shadow:inset 0 1px #ffffff16,0 8px 18px #0008}
+.project-grid{gap:16px}
+.project-card{transition:transform .2s ease,filter .2s ease}
+.project-card:hover{filter:brightness(1.12)}
+.dock{border-color:#303335aa;background:#1a1b1c99;box-shadow:0 8px 30px #0009,inset 0 1px #ffffff12}
+
 /* Synchronized research-to-data signal choreography. */
 .beam-top{left:63.77%;right:5.09%;top:27px}.beam-drop{right:5.09%;top:27px;bottom:24px}.beam-main{left:5.09%;right:5.09%;bottom:24px}
 .beam b{width:6px;height:6px;background:#f4f4f4;box-shadow:0 0 3px #fff,0 0 10px #ffffffd9,0 0 24px #ffffff73;will-change:left,right,top,opacity}
@@ -686,7 +713,7 @@ footer{flex-direction:column;gap:8px}footer .footer-heart{line-height:18px}foote
 @media(prefers-reduced-motion:reduce){.signal-head,.signal-echo{display:none}.map-container .node-light,.map-container .node svg{animation:none}.map-container .node-light{opacity:.1;transform:none}.map-container .node svg{opacity:.64;transform:none}}
 
 /* Career rail: quieter markers, premium icon glass, one continuous hierarchy. */
-.career-track{isolation:isolate}.career-track>.relative:nth-child(3){order:1}.career-track>.relative:nth-child(1){order:2}.career-track>.relative:nth-child(2){order:3}.career-track>.relative:nth-child(4){order:4}.career-track .h-6{border:1px solid #2d3032;border-radius:4px;background:linear-gradient(145deg,#202224cc,#111315cc)!important;box-shadow:inset 0 1px #ffffff12,0 8px 18px #0006;color:#b9bcbe}.career-track .h-6 svg{opacity:.82}.career-track>.relative>.absolute .h-2{width:6px;height:6px;margin-left:9px;box-shadow:0 0 0 4px #0b0d0e}.career-track>.relative:first-child>.absolute .h-2{background:#f5f5f5;box-shadow:0 0 0 4px #0b0d0e,0 0 13px #ffffff66}.career-track>.relative:first-child>.absolute .animate-ping{width:14px;height:14px;left:-3px;top:-3px;opacity:.16}.career-track>.relative>.absolute .h-5{display:none}
+.career-track{isolation:isolate}.career-track>.relative:nth-child(1){order:2}.career-track>.relative:nth-child(2){order:1}.career-track>.relative:nth-child(3){order:3}.career-track>.relative:nth-child(4){order:4}.career-track .h-6{border:1px solid #2d3032;border-radius:4px;background:linear-gradient(145deg,#202224cc,#111315cc)!important;box-shadow:inset 0 1px #ffffff12,0 8px 18px #0006;color:#b9bcbe}.career-track .h-6 svg{opacity:.82}.career-track>.relative>.absolute .h-2{width:6px;height:6px;margin-left:9px;box-shadow:0 0 0 4px #0b0d0e}.career-track>.career-current>.absolute .h-2{background:#f5f5f5;box-shadow:0 0 0 4px #0b0d0e,0 0 13px #ffffff66}.career-track>.career-current>.absolute .animate-ping{width:14px;height:14px;left:-3px;top:-3px;opacity:.16}.career-track>.relative>.absolute .h-5{display:none}
 @media(min-width:561px){#main-section>.career-track.box.flex.flex-col.gap-6:before{left:11px;right:11px;background:linear-gradient(90deg,#686b6e 0,#2a2c2e 16%,#242628 100%)}#main-section>.career-track.box.flex.flex-col.gap-6>.relative:first-of-type>.absolute:after{display:none}}
 @media(hover:hover) and (pointer:fine){.career-track>.relative:hover .h-6{transform:translateY(-2px);border-color:#484b4e;color:#fff;box-shadow:inset 0 1px #ffffff18,0 10px 24px #0009}}
 
@@ -697,10 +724,6 @@ footer{flex-direction:column;gap:8px}footer .footer-heart{line-height:18px}foote
   #main-section>.career-track.box.flex.flex-col.gap-6:before{display:none}
   #main-section>.career-track.box.flex.flex-col.gap-6>.relative{padding:20px 8px 4px!important;border-top:1px solid #292c2e}
   #main-section>.career-track.box.flex.flex-col.gap-6>.relative>.absolute{top:-4px!important;left:-1px!important}
-  #main-section>.career-track>.relative:nth-child(3){order:1}
-  #main-section>.career-track>.relative:nth-child(1){order:2}
-  #main-section>.career-track>.relative:nth-child(2){order:3}
-  #main-section>.career-track>.relative:nth-child(4){order:4}
   #main-section>.career-track .font-medium{font-size:11px!important;line-height:15px!important}
   #main-section>.career-track .text-sm{font-size:8px!important;line-height:12px!important}
   .terminal-body,.options-body{height:122px}.project-terminal{height:177px}.terminal-tape{height:27px}
