@@ -85,3 +85,8 @@ footer{display:flex;justify-content:space-between;margin-top:62px;padding-top:18
 
 /* Monochrome technology marks */
 .skill-chip{gap:7px}.skill-logo{display:inline-flex;width:15px;height:15px;flex:0 0 15px;align-items:center;justify-content:center;color:#9da2a3;transition:color 180ms ease,transform 220ms var(--ease)}.skill-logo svg{width:13px;height:13px;fill:currentColor}.skill-mark{border:1px solid #363a3c;border-radius:3px;font:600 4.5px/1 var(--font-mono),monospace;letter-spacing:-.03em}.skill-chip>span:last-child{white-space:nowrap}@media(hover:hover) and (pointer:fine){.skill-chip:hover .skill-logo{color:#edf0f0;transform:scale(1.08)}}.skill-chip:active .skill-logo{transform:scale(.9)}
+
+/* Original execution shard: opposing books converge into one fill */
+.workflow-runner{display:block;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none;isolation:isolate;backface-visibility:hidden}.workflow-runner:before,.workflow-runner:after{content:none}.workflow-runner>.execution-emblem{width:48px;height:48px}.emblem-frame{fill:#101314;stroke:#5c6264;stroke-width:1}.emblem-book{fill:none;stroke:#969c9e;stroke-width:1.15;stroke-linecap:square;stroke-linejoin:miter}.emblem-fill{fill:#d9dddd}.workflow-runner .execution-emblem .emblem-key-light{fill:url(#runner-key-light)}.workflow-runner .execution-emblem .emblem-key-dot{fill:#d8dcdd}
+.skill-logo-brand{filter:saturate(.88);opacity:.95}@media(hover:hover) and (pointer:fine){.skill-chip:hover .skill-logo-brand{color:inherit;filter:saturate(1.05) brightness(1.08);opacity:1}}
+@media(max-width:700px){.workflow-runner>.execution-emblem{width:38px;height:38px}}

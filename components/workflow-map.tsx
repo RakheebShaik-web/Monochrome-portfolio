@@ -1,12 +1,12 @@
 import type { ReactNode } from "react";
 
 const nodes = [
-  ["market", "Universe", "live"],
-  ["signal", "Signal Stack", "watch"],
-  ["router", "Broker Route", "live"],
-  ["risk", "Pre-trade Check", "watch"],
-  ["state", "Position Book", "live"],
-  ["ledger", "EOD Match", "live"]
+  ["market", "market", "Universe & Data", "live"],
+  ["signal", "signal", "Signal Formation", "watch"],
+  ["router", "risk", "Pre-Trade Risk", "watch"],
+  ["risk", "router", "Order Routing", "live"],
+  ["state", "state", "Positions & P&L", "live"],
+  ["ledger", "ledger", "Post-Trade", "live"]
 ] as const;
 
 function NodeMark({ id }: { id: string }) {
@@ -23,11 +23,22 @@ function NodeMark({ id }: { id: string }) {
 
 export function WorkflowMap() {
   return (
-    <div className="workflow" aria-label="Trading workflow from universe selection to end-of-day reconciliation">
+    <div className="workflow" aria-label="Trading workflow from point-in-time data through post-trade reconciliation">
       <svg className="workflow-rails" viewBox="0 0 668 183" preserveAspectRatio="none" aria-hidden="true"><path d="M450 27H610M634 51V135M450 159H610M253 159H402M58 159H205" /></svg>
-      <div className="workflow-legend" aria-hidden="true"><span className="lamp lamp-green">MARKET OPEN</span><span className="lamp lamp-amber">RISK ARMED</span></div>
-      <div className="workflow-runner" aria-hidden="true"><span className="runner-led runner-led-amber"/><span className="runner-led runner-led-green"/><b>BUY</b><svg viewBox="0 0 24 14"><path d="M2 7h15m-4-4 4 4-4 4"/><circle cx="21" cy="7" r="1.5"/></svg><small>120 AAPL</small></div>
-      {nodes.map(([id, label, state]) => <div className={`workflow-node node-${id}`} data-label={label} data-state={state} key={id}><NodeMark id={id} /></div>)}
+      <div className="workflow-runner" aria-hidden="true">
+        <svg className="execution-emblem" viewBox="0 0 48 48">
+          <defs>
+            <radialGradient id="runner-key-light"><stop stopColor="#fff" stopOpacity=".42"/><stop offset="1" stopColor="#fff" stopOpacity="0"/></radialGradient>
+            <radialGradient id="runner-reflection"><stop stopColor="#fff" stopOpacity=".15"/><stop offset="1" stopColor="#fff" stopOpacity="0"/></radialGradient>
+          </defs>
+          <path className="emblem-frame" d="M8 1h39v34L35 47H1V8Z"/>
+          <circle className="emblem-key-light" cx="40" cy="8" r="7"/><circle className="emblem-key-dot" cx="40" cy="8" r="1.7"/>
+          <ellipse cx="10" cy="37" rx="8" ry="6" fill="url(#runner-reflection)"/>
+          <path className="emblem-book" d="M8 17h11l5 7-5 7H8m32-14H29l-5 7 5 7h11M8 21h8m-8 6h8m24-6h-8m8 6h-8"/>
+          <path className="emblem-fill" d="m20 24 4-4 4 4-4 4Z"/>
+        </svg>
+      </div>
+      {nodes.map(([position, icon, label, state]) => <div className={`workflow-node node-${position}`} data-label={label} data-state={state} key={position}><NodeMark id={icon} /></div>)}
     </div>
   );
 }

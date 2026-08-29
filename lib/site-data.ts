@@ -11,33 +11,33 @@ export const profile = {
 export const projects = [
   {
     slug: "us-equities-oms",
-    title: "Equity Execution Engine",
-    status: "Live system",
+    title: "Systematic Equity Execution",
+    status: "Live",
     tone: "green",
-    description: "Completed-bar signals, ATR sizing, bracket execution, persistent state, monitoring, and end-of-day reconciliation.",
+    description: "Completed-bar signal generation, volatility-adjusted sizing, bracket orders, durable order state, broker monitoring, and end-of-day position and cash reconciliation.",
     source: "https://github.com/RakheebShaik-web/alpaca.bot-eod-dashboard",
     stack: ["Python", "Alpaca API", "PostgreSQL", "Redis", "Docker"],
-    invariants: ["No duplicate submissions", "Broker truth wins", "Every fill reconciles"]
+    invariants: ["Idempotent order submission", "Broker state is authoritative", "Fills reconcile to positions and cash"]
   },
   {
     slug: "nse-options-lab",
-    title: "NIFTY Volatility Desk",
+    title: "NIFTY Options Research",
     status: "Research",
     tone: "amber",
-    description: "Volatility, trend, liquidity, and event-risk research for Indian derivatives with conservative execution assumptions.",
+    description: "Point-in-time research on implied volatility, skew, liquidity, trend, and event risk in Indian index options, with conservative fill and slippage assumptions.",
     source: "https://github.com/RakheebShaik-web/stocks-options-strategy",
     stack: ["Python", "pandas", "NumPy", "PostgreSQL", "FastAPI"],
-    invariants: ["No look-ahead", "Auditable assumptions", "Event risk is explicit"]
+    invariants: ["Point-in-time inputs", "Costs and slippage are explicit", "Event risk is filtered"]
   },
   {
     slug: "factor-screener",
-    title: "Cross-Sectional Alpha Ranker",
-    status: "Roadmap",
+    title: "Cross-Sectional Equity Ranking",
+    status: "In development",
     tone: "neutral",
-    description: "An explainable cross-sectional ranking engine across quality, value, momentum, volatility, liquidity, and trend.",
+    description: "Transparent equity ranking across quality, value, momentum, volatility, liquidity, and trend, with versioned factor definitions.",
     source: "https://github.com/RakheebShaik-web/quant-screener",
     stack: ["Python", "FastAPI", "PostgreSQL", "React", "TypeScript"],
-    invariants: ["Explain every score", "Version every factor", "Rank reproducibly"]
+    invariants: ["Every score is attributable", "Factors are versioned", "Ranks are reproducible"]
   }
 ] as const;
 
@@ -49,7 +49,7 @@ export const experience = [
     role: "BTech Computer Science · AI/ML",
     date: "Graduated Mar 2025",
     location: "Vijayawada, India",
-    points: ["Built a foundation in software engineering, machine learning, data structures, and quantitative problem solving."]
+    points: ["Coursework and projects in software engineering, machine learning, data structures, statistics, and quantitative problem solving."]
   },
   {
     mark: "SE",
@@ -59,20 +59,20 @@ export const experience = [
     date: "Jul 2025 – Now",
     location: "Hyderabad, India",
     points: [
-      "Research and operate systematic strategies across U.S. equities and Indian options.",
-      "Build signal ranking, ATR risk sizing, bracket-order execution, persistent state, monitoring, and reconciliation workflows.",
-      "Review live behavior against broker truth and turn operational failure modes into permanent system invariants."
+      "Research and operate systematic strategies across U.S. equities and Indian listed derivatives.",
+      "Build point-in-time signal pipelines, volatility-adjusted sizing, pre-trade controls, broker order state, and execution monitoring.",
+      "Reconcile fills, positions, cash, and end-of-day P&L to broker records, then codify failure modes as permanent controls."
     ]
   }
 ] as const;
 
 export const skillGroups = [
   ["Languages", ["Python", "TypeScript", "C++", "SQL"]],
-  ["Backend", ["FastAPI", "REST APIs", "PostgreSQL", "Redis", "Validation"]],
-  ["Quant", ["pandas", "NumPy", "Backtesting", "Factor Models", "Volatility", "Risk Engineering"]],
-  ["Execution", ["Alpaca API", "IBKR API", "Bracket Orders", "Position Sizing", "Order Lifecycle"]],
+  ["Backend", ["FastAPI", "REST APIs", "PostgreSQL", "Redis", "Data Validation"]],
+  ["Research", ["pandas", "NumPy", "Time-Series Research", "Walk-Forward Validation", "Factor Research", "Volatility Surfaces", "Risk Models"]],
+  ["Execution", ["Alpaca API", "IBKR API", "Order State Machines", "Bracket Orders", "Position Sizing", "Execution Quality", "Post-Trade Reconciliation"]],
   ["Frontend", ["React", "Next.js", "SVG Systems", "Responsive UI", "Accessibility"]],
-  ["Infrastructure", ["Docker", "Linux", "GitHub Actions", "Vercel", "Monitoring", "Reconciliation"]]
+  ["Infrastructure", ["Docker", "Linux", "GitHub Actions", "Vercel", "Observability", "Operational Controls"]]
 ] as const;
 
 export function siteUrl() {

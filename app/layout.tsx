@@ -6,15 +6,15 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: siteUrl(),
-  title: { default: `${profile.name} — Algorithmic Trader & Full-Stack Quant Developer`, template: `%s — ${profile.name}` },
-  description: "Algorithmic trader and full-stack quant developer building systematic research, execution infrastructure, persistent state, monitoring, and reconciliation systems.",
+  title: { default: `${profile.name} — Algorithmic Trader & Quant Developer`, template: `%s — ${profile.name}` },
+  description: "Algorithmic trader and quant developer building systematic research, pre-trade risk, broker execution, position state, monitoring, and post-trade reconciliation.",
   applicationName: `${profile.name} Portfolio`,
   authors: [{ name: profile.name, url: profile.github }],
   creator: profile.name,
-  keywords: ["Rakheeb Shaikh", "algorithmic trader", "quant developer", "full-stack developer", "trading systems", "Python", "Next.js", "FastAPI", "Alpaca API", "options research"],
+  keywords: ["Rakheeb Shaikh", "algorithmic trader", "quant developer", "systematic trading", "execution management", "pre-trade risk", "post-trade reconciliation", "Python", "Alpaca API", "NIFTY options research"],
   alternates: { canonical: "/" },
-  openGraph: { type: "profile", locale: "en_IN", url: "/", title: `${profile.name} — Trading systems end to end`, description: "Research, APIs, execution, state, monitoring, and reconciliation built as complete systems.", siteName: `${profile.name} Portfolio` },
-  twitter: { card: "summary_large_image", title: `${profile.name} — Algorithmic Trader & Full-Stack Quant Developer`, description: "Trading systems built from research through production operations." },
+  openGraph: { type: "profile", locale: "en_IN", url: "/", title: `${profile.name} — Systematic Trading & Quant Engineering`, description: "Signal formation, portfolio risk, broker execution, position state, and post-trade controls.", siteName: `${profile.name} Portfolio` },
+  twitter: { card: "summary_large_image", title: `${profile.name} — Algorithmic Trader & Quant Developer`, description: "Systematic trading from point-in-time research through reconciled live positions." },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 } }
 };
 
