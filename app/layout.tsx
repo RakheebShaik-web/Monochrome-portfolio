@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Dock } from "@/components/dock";
+import { MotionReady } from "@/components/motion-ready";
 import { profile, siteUrl } from "@/lib/site-data";
 import "./globals.css";
 
@@ -20,5 +21,5 @@ export const metadata: Metadata = {
 export const viewport: Viewport = { width: "device-width", initialScale: 1, viewportFit: "cover", themeColor: "#0b0d0e", colorScheme: "dark" };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en"><body><a className="skip-link" href="#main">Skip to content</a>{children}<Dock /><div className="bottom-blur" aria-hidden="true" /></body></html>;
+  return <html lang="en"><body><a className="skip-link" href="#main">Skip to content</a>{children}<MotionReady /><Dock /><div className="bottom-blur" aria-hidden="true" /></body></html>;
 }

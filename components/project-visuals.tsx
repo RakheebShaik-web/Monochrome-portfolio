@@ -1,29 +1,68 @@
+const Lamps = ({ amberLabel, greenLabel }: { amberLabel: string; greenLabel: string }) => (
+  <div className="signal-lamps" aria-hidden="true">
+    <span className="lamp lamp-amber">{amberLabel}</span>
+    <span className="lamp lamp-green">{greenLabel}</span>
+  </div>
+);
+
 export function EquityVisual() {
+  const levels = [
+    ["196.42", "1,840", "196.45", "920"],
+    ["196.39", "2,310", "196.48", "1,460"],
+    ["196.36", "3,080", "196.52", "2,120"],
+    ["196.31", "4,420", "196.58", "3,760"]
+  ];
+
   return (
-    <div className="project-visual equity-visual" role="img" aria-label="U.S. equities order management system">
-      <div className="visual-top"><span>US EQUITIES / OMS</span><span className="status-live">ROUTER LIVE</span></div>
-      <div className="visual-main">
-        <div className="equity-chart"><small>NET LIQUIDATION</small><strong>$104,821.40</strong><svg viewBox="0 0 250 76" aria-hidden="true"><path className="grid" d="M0 19H250M0 38H250M0 57H250"/><path className="area" d="M0 68 20 60 39 63 59 45 78 50 98 32 118 39 139 26 160 33 181 18 201 22 222 10 250 16V76H0Z"/><path className="line" d="M0 68 20 60 39 63 59 45 78 50 98 32 118 39 139 26 160 33 181 18 201 22 222 10 250 16"/></svg></div>
-        <div className="metric-stack"><span>GROSS EXP.<b>28.0%</b></span><span>WORKING<b className="amber">06</b></span><span>RECON<b className="green">0 BREAKS</b></span></div>
+    <div className="project-visual equity-visual" role="img" aria-label="Live equity execution blotter and limit order book">
+      <div className="visual-top"><span>EXECUTION CONTROL / AAPL</span><Lamps amberLabel="WORKING 03" greenLabel="SESSION LIVE" /></div>
+      <div className="execution-layout">
+        <div className="order-book">
+          <div className="book-heading"><span>BID SIZE</span><span>LIMIT</span><span>ASK</span><span>SIZE</span></div>
+          {levels.map(([bid, bidSize, ask, askSize], index) => <div className="book-level" key={bid}><span className={`depth bid-depth d${index}`}>{bidSize}</span><b>{bid}</b><b>{ask}</b><span className={`depth ask-depth d${index}`}>{askSize}</span></div>)}
+          <div className="spread-line"><span>NBBO</span><strong>196.42 × 196.45</strong><em>3¢</em></div>
+        </div>
+        <div className="execution-ticket">
+          <span className="ticket-kicker">PARENT ORDER</span><strong>BUY 120</strong><span>AAPL · LIMIT</span>
+          <div className="fill-meter"><i /></div>
+          <div className="ticket-stats"><span>FILLED<b>84</b></span><span>AVG PX<b>196.41</b></span></div>
+        </div>
       </div>
-      <div className="visual-tape"><span>FILL RATE 96.4%</span><span>P95 18MS</span><span>REJECTS 00</span></div>
+      <div className="visual-tape"><span className="green-text">POS +340</span><span>BUYING POWER 71.8%</span><span className="amber-text">SLIP +0.7 BPS</span><span>RECON 0</span></div>
     </div>
   );
 }
 
 export function OptionsVisual() {
   return (
-    <div className="project-visual options-visual" role="img" aria-label="NSE options volatility research system">
-      <div className="visual-top"><span>NIFTY / VOL LAB</span><span className="status-watch">EVENT WINDOW</span></div>
-      <div className="visual-main">
-        <div className="vol-chart"><small>IV TERM STRUCTURE</small><svg viewBox="0 0 250 102" aria-hidden="true"><g className="surface"><path d="M7 88C49 57 78 46 126 47s81 14 117 40M7 72c44-24 74-33 119-33s80 9 117 34M7 56c46-17 76-23 119-23s78 6 117 24M29 98c3-32 11-62 28-88m36 88c2-37 5-68 11-94m43 94V4m42 94c-2-37-6-68-11-94m65 94c-4-33-13-63-28-88"/></g><path className="smile" d="M9 86C57 83 79 22 127 22s70 61 116 64"/></svg></div>
-        <div className="metric-stack"><span>IV RANK<b className="amber">72</b></span><span>25Δ SKEW<b>−3.8</b></span><span>THETA / D<b>−18.6</b></span><span>REGIME<b className="amber">SHORT VOL</b></span></div>
+    <div className="project-visual options-visual" role="img" aria-label="NIFTY options volatility surface and strike risk monitor">
+      <div className="visual-top"><span>VOLATILITY DESK / NIFTY</span><Lamps amberLabel="EVENT RISK" greenLabel="CHAIN FRESH" /></div>
+      <div className="vol-layout">
+        <div className="vol-surface">
+          <div className="surface-axis"><span>PUT WING</span><span>ATM 24,800</span><span>CALL WING</span></div>
+          <svg viewBox="0 0 320 116" aria-hidden="true">
+            <g className="vol-grid"><path d="M18 20H302M18 47H302M18 74H302M18 101H302M62 12V108M110 12V108M160 12V108M210 12V108M258 12V108" /></g>
+            <path className="vol-fill" d="M18 37C60 42 92 70 126 83 143 89 151 92 160 92s17-3 34-10c35-14 67-37 108-45v64H18Z" />
+            <path className="smile" d="M18 37C60 42 92 70 126 83 143 89 151 92 160 92s17-3 34-10c35-14 67-37 108-45" />
+            <path className="atm-line" d="M160 12V101" /><circle className="atm-point" cx="160" cy="92" r="3" />
+          </svg>
+        </div>
+        <div className="greek-stack">
+          <span><small>ATM IV</small><b>14.28</b></span><span><small>25Δ RR</small><b className="amber-text">−3.8</b></span><span><small>GEX</small><b className="green-text">+₹18.4M</b></span><span><small>VANNA</small><b>−0.17</b></span>
+        </div>
       </div>
-      <div className="visual-tape"><span>ATM IV 14.28</span><span>PCR (OI) 1.08</span><span>MAX PAIN 24,800</span></div>
+      <div className="visual-tape"><span>IVP 72</span><span>PCR 1.08</span><span className="amber-text">MAX PAIN 24,800</span><span>EXPIRY T−2</span></div>
     </div>
   );
 }
 
 export function FactorVisual() {
-  return <div className="project-visual factor-visual" role="img" aria-label="Explainable quantitative factor ranking"><div className="visual-top"><span>CROSS-SECTION / RANK ENGINE</span><span>VERSIONED</span></div><svg viewBox="0 0 620 128" aria-hidden="true"><g className="factor-bars"><path d="M40 92h88v12H40zm0-28h145v12H40zm0-28h214v12H40zm344 56h196v12H384zm0-28h140v12H384zm0-28h84v12h-84z"/></g><path className="factor-line" d="M42 111 124 82 206 91 289 51 372 62 455 31 536 43 582 21"/></svg><div className="visual-tape"><span>QUALITY</span><span>VALUE</span><span>MOMENTUM</span><span>VOLATILITY</span></div></div>;
+  const ranks = [["TREND", "+1.42", "82"], ["QUALITY", "+0.87", "68"], ["VALUE", "+0.31", "54"], ["LIQUIDITY", "+1.08", "75"]];
+  return (
+    <div className="project-visual factor-visual" role="img" aria-label="Cross-sectional alpha rank and factor attribution monitor">
+      <div className="visual-top"><span>ALPHA RANK / CROSS-SECTION</span><Lamps amberLabel="DRIFT 0.6σ" greenLabel="MODEL VALID" /></div>
+      <div className="rank-board"><div className="rank-score"><span>COMPOSITE</span><strong>87.4</strong><small>TOP 6.2%</small></div><div className="rank-bars">{ranks.map(([name, value, width]) => <div className="rank-row" key={name}><span>{name}</span><i><b style={{ width: `${width}%` }} /></i><em>{value}</em></div>)}</div></div>
+      <div className="visual-tape"><span className="green-text">LONG BIAS</span><span>Z-SCORED</span><span>SECTOR NEUTRAL</span><span>AS OF 15:29</span></div>
+    </div>
+  );
 }

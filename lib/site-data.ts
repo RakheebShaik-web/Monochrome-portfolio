@@ -11,7 +11,7 @@ export const profile = {
 export const projects = [
   {
     slug: "us-equities-oms",
-    title: "U.S. Stock Bot",
+    title: "Equity Execution Engine",
     status: "Live system",
     tone: "green",
     description: "Completed-bar signals, ATR sizing, bracket execution, persistent state, monitoring, and end-of-day reconciliation.",
@@ -21,7 +21,7 @@ export const projects = [
   },
   {
     slug: "nse-options-lab",
-    title: "NSE Options System",
+    title: "NIFTY Volatility Desk",
     status: "Research",
     tone: "amber",
     description: "Volatility, trend, liquidity, and event-risk research for Indian derivatives with conservative execution assumptions.",
@@ -31,7 +31,7 @@ export const projects = [
   },
   {
     slug: "factor-screener",
-    title: "Quant Screener",
+    title: "Cross-Sectional Alpha Ranker",
     status: "Roadmap",
     tone: "neutral",
     description: "An explainable cross-sectional ranking engine across quality, value, momentum, volatility, liquidity, and trend.",
