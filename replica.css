@@ -78,3 +78,44 @@ body:before{display:none}
   .map-container .node-light{opacity:.08}.map-container .node svg{opacity:.64}
   .button,.inline-skill,.skill-chip,.dock-item,.dock-item svg,.project-card,.system-entry,.contact-row{transition:opacity 160ms ease,color 160ms ease,background-color 160ms ease;transform:none!important}
 }
+
+/* Reference-accurate workflow picture: dashed rails and one traveling card. */
+.trade-flow{z-index:3;overflow:visible}
+.signal-circuit{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
+.signal-circuit .route-segment,.signal-circuit .route-cap{fill:none;stroke:#2d2e2f;vector-effect:non-scaling-stroke}
+.signal-circuit .route-segment{stroke-width:1;stroke-dasharray:4 4}
+.signal-circuit .route-cap{stroke-width:1;stroke-linecap:round;opacity:.86}
+.map-container .node{z-index:2;width:48px;height:48px;border:1px dashed #2d2e2f;border-radius:5px;background:#0e0f10;box-shadow:none;color:#5f6162;opacity:1!important;transform:none!important;transition:border-color 160ms ease,color 160ms ease,background-color 160ms ease}
+.map-container .node:before,.map-container .node-light{display:none}
+.map-container .node svg{opacity:.62;filter:none!important;transform:none!important;animation:none!important;transition:opacity 160ms ease}
+.map-container .node:after{color:#535455;font-size:8px;line-height:12px}
+.map-container .n-canvas:after,.map-container .n-concept:after{top:-18px}
+.map-container .n-draft:after,.map-container .n-style:after,.map-container .n-refine:after,.map-container .n-deliver:after{top:54px}
+.flow-runner{--run-x-0:402px;--run-x-1:610px;--run-x-2:402px;--run-x-3:205px;--run-x-4:10px;--run-y-0:4px;--run-y-1:135px;position:absolute;z-index:4;left:0;top:0;display:flex;width:48px;height:48px;align-items:center;justify-content:center;border:1px solid #626465;border-radius:5px;background:#111213;color:#d8d9d9;box-shadow:0 7px 16px #00000073,inset 0 1px #ffffff0c;will-change:transform,opacity;animation:reference-card-route 16s cubic-bezier(.75,-.01,0,.99) infinite,reference-card-visibility 16s linear infinite}
+.flow-runner:before{content:"";position:absolute;inset:4px;border:1px solid #ffffff08;border-radius:2px}
+.flow-runner svg{position:relative;z-index:1;opacity:.92}
+@keyframes reference-card-route{
+  0%{transform:translate(var(--run-x-0),var(--run-y-0))}
+  18%,20%{transform:translate(var(--run-x-1),var(--run-y-0))}
+  38%,40%{transform:translate(var(--run-x-1),var(--run-y-1))}
+  58%,60%{transform:translate(var(--run-x-2),var(--run-y-1))}
+  78%,80%{transform:translate(var(--run-x-3),var(--run-y-1))}
+  98%,100%{transform:translate(var(--run-x-4),var(--run-y-1))}
+}
+@keyframes reference-card-visibility{0%{opacity:0}1.5%,96.5%{opacity:1}98%,100%{opacity:0}}
+@media(hover:hover) and (pointer:fine){
+  .map-container .node:hover{border-color:#505253;background:#111213;color:#c8c9c9;transform:none!important}
+  .map-container .node:hover svg{opacity:.92;transform:none!important}
+}
+@media(max-width:700px){
+  .system-map{opacity:1}
+  .map-container .node{width:38px;height:38px}
+  .map-container .n-canvas,.map-container .n-style{left:calc(63.77% - 19px)}
+  .map-container .n-concept,.map-container .n-draft{left:calc(94.91% - 19px);right:auto}
+  .map-container .n-refine{left:calc(34.28% - 19px)}
+  .map-container .n-deliver{left:calc(5.09% - 19px)}
+  .map-container .n-draft:after,.map-container .n-style:after,.map-container .n-refine:after,.map-container .n-deliver:after{top:44px}
+  .flow-runner{--run-x-0:calc(63.77vw - 39.4064px);--run-x-1:calc(94.91vw - 49.3712px);--run-x-2:calc(63.77vw - 39.4064px);--run-x-3:calc(34.28vw - 29.9696px);--run-x-4:calc(5.09vw - 20.6288px);--run-y-0:0px;--run-y-1:107px;width:38px;height:38px}
+  .flow-runner svg{width:15px;height:15px}
+}
+@media(prefers-reduced-motion:reduce){.flow-runner{display:none}}
