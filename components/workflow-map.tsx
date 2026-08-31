@@ -26,16 +26,12 @@ export function WorkflowMap() {
     <div className="workflow" aria-label="Trading workflow from point-in-time data through post-trade reconciliation">
       <svg className="workflow-rails" viewBox="0 0 668 183" preserveAspectRatio="none" aria-hidden="true"><path d="M450 27H610M634 51V135M450 159H610M253 159H402M58 159H205" /></svg>
       <div className="workflow-runner" aria-hidden="true">
-        <svg className="execution-emblem" viewBox="0 0 48 48">
-          <defs>
-            <radialGradient id="runner-key-light"><stop stopColor="#fff" stopOpacity=".42"/><stop offset="1" stopColor="#fff" stopOpacity="0"/></radialGradient>
-            <radialGradient id="runner-reflection"><stop stopColor="#fff" stopOpacity=".15"/><stop offset="1" stopColor="#fff" stopOpacity="0"/></radialGradient>
-          </defs>
-          <path className="emblem-frame" d="M8 1h39v34L35 47H1V8Z"/>
-          <circle className="emblem-key-light" cx="40" cy="8" r="7"/><circle className="emblem-key-dot" cx="40" cy="8" r="1.7"/>
-          <ellipse cx="10" cy="37" rx="8" ry="6" fill="url(#runner-reflection)"/>
-          <path className="emblem-book" d="M8 17h11l5 7-5 7H8m32-14H29l-5 7 5 7h11M8 21h8m-8 6h8m24-6h-8m8 6h-8"/>
-          <path className="emblem-fill" d="m20 24 4-4 4 4-4 4Z"/>
+        <svg viewBox="0 0 20 20">
+          <path className="runner-ask" d="M2.5 5.5H5v2h2.5v2H9" />
+          <path className="runner-bid" d="M2.5 14.5H5v-2h2.5v-2H9" />
+          <path className="runner-mid" d="m9 10 2.5-2.5L14 10l-2.5 2.5L9 10Z" />
+          <path className="runner-fill" d="M14 10h2.5" />
+          <rect x="16.2" y="9.3" width="1.4" height="1.4" rx=".2" />
         </svg>
       </div>
       {nodes.map(([position, icon, label, state]) => <div className={`workflow-node node-${position}`} data-label={label} data-state={state} key={position}><NodeMark id={icon} /></div>)}
