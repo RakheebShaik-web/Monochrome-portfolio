@@ -69,13 +69,13 @@ footer{display:flex;justify-content:space-between;margin-top:62px;padding-top:18
 .workflow-node:before,.workflow-node[data-state="watch"]:before{background:#7f8587;box-shadow:0 0 5px #ffffff28}.workflow-node[data-state="live"]>svg,.workflow-node[data-state="watch"]>svg{color:#7e8587;filter:none}.workflow-runner{box-shadow:-8px 0 22px #dda43820,8px 0 24px #63d7822b,0 9px 22px #000d,inset 0 1px #ffffff1c}.workflow-runner b{color:#e7eaea}.workflow-runner small{color:#adb2b3}
 
 /* GitHub-compatible chronology and scroll behavior */
-.contributions{display:block;overflow-x:auto;overscroll-behavior-inline:contain;scrollbar-width:none}.contributions::-webkit-scrollbar{display:none}.calendar-track{width:max-content;min-width:100%}.months{width:633px}.heatmap{grid-template-rows:repeat(7,9px);grid-auto-flow:column;grid-auto-columns:9px}
+.contributions{display:block;overflow-x:auto;overscroll-behavior-inline:contain;scrollbar-width:none;-webkit-overflow-scrolling:touch}.contributions::-webkit-scrollbar{display:none}.calendar-track{width:max-content;min-width:100%}.months{width:633px}.heatmap{grid-template-rows:repeat(7,9px);grid-auto-flow:column;grid-auto-columns:9px}
 
 /* View entry and touch feedback */
 .motion-ready [data-reveal]{opacity:0;transform:translateY(14px);transition:opacity 620ms var(--ease),transform 720ms var(--ease)}.motion-ready [data-reveal].is-visible{opacity:1;transform:none}.project-card:active .project-visual{transform:scale(.985);border-color:#555b5d}.project-card:active .fill-meter i{box-shadow:0 0 12px #ffffff66}.dock-item:active{transform:translateY(1px) scale(.96)}
 @keyframes carried-light{0%,100%{opacity:.68;transform:scale(.86)}50%{opacity:1;transform:scale(1.15)}}
 .workflow-runner:before,.workflow-runner:after{animation:carried-light 1.8s ease-in-out infinite}
-@media(max-width:700px){.contributions{margin-inline:-16px;padding-inline:16px}.calendar-track{min-width:633px}.motion-ready [data-reveal]{transform:translateY(10px)}.project-card{-webkit-tap-highlight-color:transparent}}
+@media(max-width:700px){.contributions{margin-inline:-16px;padding-inline:16px;scroll-padding-inline:16px;mask-image:linear-gradient(90deg,transparent,#000 14px,#000 calc(100% - 14px),transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 14px,#000 calc(100% - 14px),transparent)}.calendar-track{min-width:633px}.motion-ready [data-reveal]{transform:translateY(10px)}.project-card{-webkit-tap-highlight-color:transparent}}
 @media(prefers-reduced-motion:reduce){.motion-ready [data-reveal]{opacity:1;transform:none;transition:none}.workflow-runner:before,.workflow-runner:after{animation:none}}
 
 /* Single-layer order ticket: LEDs move with the ticket without compositor trails */
