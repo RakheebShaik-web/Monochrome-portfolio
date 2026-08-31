@@ -26,6 +26,6 @@ export async function ContributionGrid() {
   const { days, count } = await getContributions();
   return <CalendarScroller>
     <div className="calendar-track"><div className="months">{months.map((month, index) => <span key={`${month}-${index}`}>{month}</span>)}</div><div className="heatmap" aria-hidden="true">{days.map((day, index) => <i data-level={day.level} title={day.date || undefined} key={day.date || index} />)}</div></div>
-    <p>{count ? `${count} contributions in the last year` : "Public GitHub activity · live data refreshes automatically"}</p>
+    <p>{count ? `${count} contributions in life time` : "Public GitHub activity · live data refreshes automatically"}</p>
   </CalendarScroller>;
 }
